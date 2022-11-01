@@ -35,7 +35,7 @@ if ( ! class_exists( 'Customizer' ) ) {
      */
     abstract class Customizer implements ActionHooks {
         /**
-         * Customizer section parameters
+         * An array of multiple WP_Customize_Manager::add_section() parameters
          *
          * @access protected
          * @var array
@@ -44,7 +44,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         protected array $sections;
 
         /**
-         * Customizer settings parameters
+         * An array of multiple WP_Customize_Manager::add_setting() parameters
          *
          * @access protected
          * @var array
@@ -53,7 +53,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         protected array $settings;
 
         /**
-         * Customizer controls parameters
+         * An array of multiple WP_Customize_Manager::add_control() parameters
          *
          * @access protected
          * @var array
@@ -65,7 +65,7 @@ if ( ! class_exists( 'Customizer' ) ) {
          * Customizer constructor
          *
          * @access public
-         * @param array $parameters
+         * @param array $parameters     Initial arguements for WP_Customize_Manager::add_section(), WP_Customize_Manager::add_setting(), and WP_Customize_Manager::add_control()
          * @return void
          * @since 1.0.0
          */
@@ -90,7 +90,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * "customize_register" action callback
+         * "customize_register" action hook callback
          *
          * @access public
          * @final
@@ -106,7 +106,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * Add Customizer sections
+         * Registers Customizer sections
          *
          * @access private
          * @param \WP_Customize_Manager $manager
@@ -126,7 +126,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * Add Customizer settings
+         * Registers Customizer settings
          *
          * @access private
          * @param \WP_Customize_Manager $manager
@@ -148,7 +148,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * Add Customizer controls
+         * Registers Customizer controls
          *
          * @access private
          * @param \WP_Customize_Manager $manager
@@ -179,9 +179,11 @@ if ( ! class_exists( 'Customizer' ) ) {
         /**
          * Handle callback arguements for sections, settings, and controls
          *
+         * @access private
          * @param array $setting
          * @param string $callback
          * @return array
+         * @since 1.0.0
          */
         private function get_args_with_cb( array $setting, string $callback ) : array
         {
@@ -195,7 +197,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * Customizer section default arguements
+         * Default arguements for WP_Customize_Manager::add_section()
          *
          * @access private
          * @return array
@@ -217,7 +219,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * Customizer settings default arguements
+         * Default arguements for WP_Customize_Manager::add_setting()
          *
          * @access private
          * @return array
@@ -237,7 +239,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * Customizer controls default arguements
+         * Default arguements for WP_Customize_Manager::add_control()
          *
          * @access private
          * @return array
@@ -264,7 +266,7 @@ if ( ! class_exists( 'Customizer' ) ) {
         }
 
         /**
-         * Customizer media controls default arguements
+         * Default arguements for WP_Customize_Manager::add_control() that uses WP_Customize_Media_Control class
          *
          * @access private
          * @return array

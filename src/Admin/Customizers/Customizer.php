@@ -2,7 +2,7 @@
 /**
  * Customizer class file
  *
- * This class contains Customizer class file. This is an example class file for classes that need to register
+ * This file contains Customizer class file. This is an example class file for classes that need to register
  * customizer sections, settings and controls.
  *
  * @package    WordpressThemeStarter
@@ -26,7 +26,8 @@ if ( ! class_exists( 'Customizer' ) ) {
     /**
      * Customizer Class
      *
-     * This is an demo class file for classes that will register customizer sections, settings and controls.
+     * Registers customizer sections, settings and controls. This class needs to define methods that will be passed as callbacks to
+     * WP_Customize_Manager::add_section(), WP_Customize_Manager::add_setting(), and WP_Customize_Manager::add_control().
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -36,7 +37,7 @@ if ( ! class_exists( 'Customizer' ) ) {
          * Customizer constructor
          *
          * @access public
-         * @param array $parameters An array of configurations for sections, settings and controls that will be registered by the customizer.
+         * @param array $parameters     Initial arguements for WP_Customize_Manager::add_section(), WP_Customize_Manager::add_setting(), and WP_Customize_Manager::add_control()
          * @return void
          * @since 1.0.0
          */
@@ -82,7 +83,6 @@ if ( ! class_exists( 'Customizer' ) ) {
              *
              */
 
-            // return Wp_Error after adding validation errors
             return $validity;
         }
 
