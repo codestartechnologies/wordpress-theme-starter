@@ -162,7 +162,9 @@ if ( ! class_exists( 'MenuPage' ) ) {
         }
 
         /**
-         * add_menu_page() callback method
+         * Admin menu callback
+         *
+         * This method loads the view that will be shown on the admin menu page
          *
          * @access public
          * @final
@@ -175,7 +177,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
                 exit;
             }
 
-            rome_include_file( $this->view, $this->view_args() );
+            $this->load_view( $this->view, $this->view_args() );
         }
 
         /**
