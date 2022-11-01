@@ -2,8 +2,7 @@
 /**
  * OptionsPage abstract class file.
  *
- * This file contains OptionsPage abstract class which contains contracts for classes that will
- * create menu pages in the admin section using add_options_page().
+ * This file contains OptionsPage abstract class which contains contracts for classes that will create admin menu pages with add_options_page().
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -24,14 +23,14 @@ if ( ! class_exists( 'OptionsPage' ) ) {
     /**
      * Class OptionsPage
      *
-     * This class contains contracts that will be used to create options menu pages.
+     * This class contains contracts that will be used to create admin menu pages with add-options_page().
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
     abstract class OptionsPage extends MenuPage {
         /**
-         * "admin_menu" action callback
+         * "admin_menu" action hook callback
          *
          * @access public
          * @final

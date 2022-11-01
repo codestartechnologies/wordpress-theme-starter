@@ -2,8 +2,7 @@
 /**
  * MenuPage abstract class file.
  *
- * This file contains MenuPage abstract class which contains contracts for classes that will
- * create menu pages in the admin section.
+ * This file contains MenuPage abstract class which contains contracts for classes that will create admin menu pages with add_menu_page().
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -27,7 +26,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
     /**
      * Class MenuPage
      *
-     * This class contains contracts that will be used to create menu pages.
+     * This class contains contracts that will be used to create menu pages using add_menu_page().
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -141,7 +140,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
         }
 
         /**
-         * "admin_menu" action callback
+         * "admin_menu" action hook callback
          *
          * @access public
          * @final
@@ -162,7 +161,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
         }
 
         /**
-         * Admin menu callback
+         * add_menu_page() callback
          *
          * This method loads the view that will be shown on the admin menu page
          *
@@ -181,7 +180,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
         }
 
         /**
-         *  Returns arguments that will be passed to the page.
+         *  Get arguments that will be passed to the page.
          *
          * @access public
          * @abstract
@@ -193,7 +192,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
         /**
          * Fires before the page is loaded.
          *
-         * Used to add functionalties that will run before the registered menu page is fully loaded.
+         * Add functionalties that will run before the menu page is fully loaded.
          *
          * @access public
          * @abstract

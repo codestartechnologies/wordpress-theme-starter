@@ -2,8 +2,7 @@
 /**
  * ThemePage abstract class file.
  *
- * This file contains ThemePage abstract class which contains contracts for classes that will
- * create menu pages in the admin section using add_theme_page().
+ * This file contains ThemePage abstract class which contains contracts for classes that will create admin menu pages with add_theme_page().
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -24,14 +23,14 @@ if ( ! class_exists( 'ThemePage' ) ) {
     /**
      * Class ThemePage
      *
-     * This class contains contracts that will be used to create theme menu pages.
+     * This class contains contracts that will be used to create admin menu pages with add_theme_page().
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
     abstract class ThemePage extends MenuPage {
         /**
-         * "admin_menu" action callback
+         * "admin_menu" action hook callback
          *
          * @access public
          * @final

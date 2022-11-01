@@ -25,8 +25,7 @@ if ( ! class_exists( 'AdminNotice' ) ) {
     /**
      * Class Customizer
      *
-     * This class contains contracts that will be used to register customizer sections, settings,
-     * and controls.
+     * This class contains contracts that will be used to register admin notifications.
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -45,7 +44,7 @@ if ( ! class_exists( 'AdminNotice' ) ) {
         }
 
         /**
-         * "admin_notices" action callback
+         * "admin_notices" action hook callback
          *
          * @access public
          * @abstract

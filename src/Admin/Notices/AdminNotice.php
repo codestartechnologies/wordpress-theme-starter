@@ -32,7 +32,7 @@ if ( ! class_exists( 'AdminNotice' ) ) {
      */
     final class AdminNotice extends AbstractsAdminNotice {
         /**
-         * "admin_notices" action callback
+         * "admin_notices" action hook callback
          *
          * @access public
          * @return void

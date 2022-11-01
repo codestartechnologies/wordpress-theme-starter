@@ -125,7 +125,7 @@ if ( ! class_exists( 'Sidebar' ) ) {
          * Sidebar constructor
          *
          * @access public
-         * @param array $parameters
+         * @param array $parameters     Parameters for register_sidebar()
          * @return void
          * @since 1.0.0
          */
@@ -157,7 +157,7 @@ if ( ! class_exists( 'Sidebar' ) ) {
         }
 
         /**
-         * "widgets_init" action callback
+         * "widgets_init" action hook callback
          *
          * @access public
          * @final

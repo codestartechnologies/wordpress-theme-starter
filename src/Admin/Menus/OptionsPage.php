@@ -2,8 +2,7 @@
 /**
  * OptionsPage class file.
  *
- * This class contains OptionsPage class file. This is an example class file for classes that need to register admin menus
- * using add_options_page() method.
+ * This file contains OptionsPage class file. This is an example class file for classes that need to register admin menus with add_options_page().
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -26,8 +25,7 @@ if ( ! class_exists( 'OptionsPage' ) ) {
     /**
      * Class OptionsPage
      *
-     * This is an example class file for classes that need to register admin menus using add_options_page() method. This class implements
-     * two methods: view_args() and load_page_hook().
+     * This class registers admin menus using add_options_page(). This class must implement view_args() and load_page_hook() methods.
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -38,7 +36,7 @@ if ( ! class_exists( 'OptionsPage' ) ) {
          * OptionsPage constructor
          *
          * @access public
-         * @param array $parameters   Initial parameters passed to add_options_page() method
+         * @param array $parameters   Initial parameters passed to add_options_page()
          * @return void
          * @since 1.0.0
          */
@@ -48,7 +46,7 @@ if ( ! class_exists( 'OptionsPage' ) ) {
         }
 
         /**
-         * Returns arguments that will be passed to the page.
+         * Get arguments that will be passed to the page.
          *
          * @access public
          * @return array
@@ -60,7 +58,7 @@ if ( ! class_exists( 'OptionsPage' ) ) {
         }
 
         /**
-         * Used to add functionalties that will run before the registered menu page is fully loaded.
+         * Add functionalties that will run before the menu page is fully loaded.
          *
          * @access public
          * @return void

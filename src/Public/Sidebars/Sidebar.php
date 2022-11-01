@@ -35,7 +35,7 @@ if ( ! class_exists( 'Sidebar' ) ) {
          * Sidebar constructor
          *
          * @access public
-         * @param array $parameters     Initial parameters passed to register_sidebar() method
+         * @param array $parameters     Initial parameters passed to register_sidebar()
          * @return void
          * @since 1.0.0
          */

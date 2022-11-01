@@ -2,8 +2,7 @@
 /**
  * MenuPage class file.
  *
- * This class contains MenuPage class file. This is an example class file for classes that need to register admin menus
- * using add_menu_page() method.
+ * This file contains MenuPage class file. This is an example class file for classes that need to register admin menus with add_menu_page().
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -26,8 +25,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
     /**
      * Class MenuPage
      *
-     * This is an example class file for classes that need to register admin menus using add_menu_page() method. This class implements
-     * two methods: view_args() and load_page_hook().
+     * This class registers admin menus using add_menu_page(). This class must implement view_args() and load_page_hook() methods.
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -37,7 +35,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
          * MenuPage constructor
          *
          * @access public
-         * @param array $parameters   Initial parameters passed to add_menu_page() method
+         * @param array $parameters   Initial parameters passed to add_menu_page()
          * @return void
          * @since 1.0.0
          */
@@ -47,7 +45,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
         }
 
         /**
-         * Returns arguments that will be passed to the page.
+         * Get arguments that will be passed to the page.
          *
          * @access public
          * @return array
@@ -59,7 +57,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
         }
 
         /**
-         * Used to add functionalties that will run before the registered menu page is fully loaded.
+         * Add functionalties that will run before the menu page is fully loaded.
          *
          * @access public
          * @return void
@@ -67,7 +65,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
          */
         public function load_page_hook(): void
         {
-            // 
+            //
         }
     }
 }
