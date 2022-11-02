@@ -7,7 +7,7 @@
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
  * @link       https://codestar.com.ng
- * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @license    https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
  * @since      1.0.0
  */
 
@@ -81,7 +81,7 @@ if ( ! class_exists( 'Constants' ) ) {
              * Directory for storing views shown in the public area
              */
             if ( ! defined( 'WTS_PUBLIC_VIEWS_DIR' ) ) {
-                define( 'WTS_ADMIN_VIEWS_DIR', trailingslashit( WTS_THEME_PATH . 'views/public' ) );
+                define( 'WTS_PUBLIC_VIEWS_DIR', trailingslashit( WTS_THEME_PATH . 'views/public' ) );
             }
 
             /**

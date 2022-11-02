@@ -6,6 +6,7 @@
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @license    https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
  * @link       https://codestar.com.ng
  * @since      1.0.0
  */
@@ -23,7 +24,7 @@ if ( ! trait_exists( 'PageViewLoader' ) ) {
     /**
      * Trait PageViewLoader
      *
-     * This class contains methods for loading views in the admin area or public area of the site.
+     * This trait contains methods for loading views in the admin area or public area of the site.
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -32,6 +33,7 @@ if ( ! trait_exists( 'PageViewLoader' ) ) {
         /**
          * Include a view in the page
          *
+         * @access public
          * @param string $view      The relative path to the view file. Paths are separated using dots (.)
          * @param array $params     Parameters passed to the view. Default is an empty array
          * @param string $type      The directory to search for the view. Can be either "admin" or "public". Default is admin
@@ -64,6 +66,7 @@ if ( ! trait_exists( 'PageViewLoader' ) ) {
         /**
          * Prints error message for views loaded with an invalid type parameter.
          *
+         * @access public
          * @param string $type  The view type
          * @return void
          * @since 1.0.0
@@ -75,7 +78,8 @@ if ( ! trait_exists( 'PageViewLoader' ) ) {
                     '
                         <h3 style="color: red;">View type does not exist!</h3>
                         <p>View of type <b>%s</b> is invalid. Valid types are <em>admin</em> and <em>site</em> </p>
-                    '
+                    ',
+                    'wts'
                 ),
                 $type
             );
@@ -84,6 +88,7 @@ if ( ! trait_exists( 'PageViewLoader' ) ) {
         /**
          * Prints error message for non existing views.
          *
+         * @access public
          * @param string $type  Path to the view file
          * @return void
          * @since 1.0.0
@@ -95,7 +100,8 @@ if ( ! trait_exists( 'PageViewLoader' ) ) {
                     '
                         <h3 style="color: red;">View could not be loaded!</h3>
                         <p>There was an error loading <b>%s</b>. Please check file exist and is readable. </p>
-                    '
+                    ',
+                    'wts'
                 ),
                 $file_path
             );
