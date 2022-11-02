@@ -1,0 +1,36 @@
+{
+    "name": "codestartechnologies/wordpress-theme-starter",
+    "description": "A boiler-plate for a wordpress theme",
+    "type": "project",
+    "keywords": [
+        "wordpress",
+        "wordpress theme boilerplate",
+        "boilerplate for wordpress theme",
+        "wordpress theme generator",
+        "wts",
+        "wordpress theme starter",
+        "wordpress theme builder"
+    ],
+    "readme": "README.MD",
+    "license": "AGPL-3.0-or-later",
+    "autoload": {
+        "psr-4": {
+            "Codestartechnologies\\WordpressThemeStarter\\": "src/"
+        },
+        "files": [
+            "helpers/helpers.php",
+            "helpers/pagination.php",
+            "helpers/posts.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "Chijindu G. Nzeako",
+            "email": "chijindunzeako517@gmail.com"
+        }
+    ],
+    "support": {
+        "email": "codestartechng@gmail.com"
+    },
+    "require": {}
+}

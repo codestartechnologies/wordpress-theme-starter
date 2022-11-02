@@ -41,35 +41,54 @@ if ( ! class_exists( 'Constants' ) ) {
          */
         public static function define_core_constants() : void
         {
+            /**
+             * Theme directory path
+             */
+            if ( ! defined( 'WTS_THEME_PATH' ) ) {
+                define( 'WTS_THEME_PATH', trailingslashit( get_theme_file_path() ) );
+            }
 
             /**
-             * The directory for storing views that will be shown in the admin area
+             * Theme directory uri
+             */
+            if ( ! defined( 'WTS_THEME_URI' ) ) {
+                define( 'WTS_THEME_URI', trailingslashit( get_theme_file_uri() ) );
+            }
+
+            /**
+             * Directory uri for css files
+             */
+            if ( ! defined( 'WTS_THEME_CSS_URI' ) ) {
+                define( 'WTS_THEME_CSS_URI', trailingslashit( WTS_THEME_URI . 'assets/css' ) );
+            }
+
+            /**
+             * Directory uri for javascript files
+             */
+            if ( ! defined( 'WTS_THEME_JS_URI' ) ) {
+                define( 'WTS_THEME_JS_URI', trailingslashit( WTS_THEME_URI . 'assets/js' ) );
+            }
+
+            /**
+             * Directory for storing views shown in the admin area
              */
             if ( ! defined( 'WTS_ADMIN_VIEWS_DIR' ) ) {
-                define( 'WTS_ADMIN_VIEWS_DIR', 'views/admin' );
+                define( 'WTS_ADMIN_VIEWS_DIR', trailingslashit( WTS_THEME_PATH . 'views/admin' ) );
             }
 
             /**
-             * The directory for storing views that will be shown in the public area
+             * Directory for storing views shown in the public area
              */
             if ( ! defined( 'WTS_PUBLIC_VIEWS_DIR' ) ) {
-                define( 'WTS_PUBLIC_VIEWS_DIR', 'views/public' );
+                define( 'WTS_ADMIN_VIEWS_DIR', trailingslashit( WTS_THEME_PATH . 'views/public' ) );
             }
-        }
 
-        /**
-         * Define theme constants
-         *
-         * Here you can specify constants you will use when developing your theme.
-         *
-         * @access public
-         * @static
-         * @return void
-         * @since 1.0.0
-         */
-        public static function define_theme_constants() : void
-        {
-
+            /**
+             * Directory for storing configuration files
+             */
+            if ( ! defined( 'WTS_CONFIGS_DIR' ) ) {
+                define( 'WTS_CONFIGS_DIR', trailingslashit( WTS_THEME_PATH . 'configs') );
+            }
         }
     }
 }
