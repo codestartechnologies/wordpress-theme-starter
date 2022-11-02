@@ -7,6 +7,7 @@
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
  * @link       https://codestar.com.ng
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
  * @since      1.0.0
  */
 
@@ -28,7 +29,7 @@ if ( ! class_exists( 'Constants' ) ) {
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
-    final class Constants {
+    class Constants {
         /**
          * Define core constants.
          *
@@ -88,6 +89,20 @@ if ( ! class_exists( 'Constants' ) ) {
              */
             if ( ! defined( 'WTS_CONFIGS_DIR' ) ) {
                 define( 'WTS_CONFIGS_DIR', trailingslashit( WTS_THEME_PATH . 'configs') );
+            }
+
+            /**
+             * Theme template parts base directory
+             */
+            if ( ! defined( 'WTS_TEMPLATE_PARTS_DIR' ) ) {
+                define( 'WTS_TEMPLATE_PARTS_DIR', trailingslashit( WTS_THEME_PATH . 'template-parts/' ) );
+            }
+
+            /**
+             * Directory for storing theme language translation files
+             */
+            if ( ! defined( 'WTS_LANGUAGES_DIR' ) ) {
+                define( 'WTS_LANGUAGES_DIR', trailingslashit( WTS_THEME_PATH . 'languages/' ) );
             }
         }
     }

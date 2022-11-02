@@ -9,7 +9,7 @@
 
 return array(
     /**
-     * Customize markups used in displaying when filtering comments lists
+     * Customize markups used when filtering comments lists
      */
     'comments_lists_markup' => array (
         /**
@@ -74,6 +74,139 @@ return array(
          * Default: <p> %1$s %2$s </p>
          */
         'comment'           => '',
+
+    ),
+
+    /**
+     * Customize the markup used when filtering comment form default arguments.
+     */
+    'form_defaults_markup'  => array(
+        /**
+         * Opening tag markup
+         *
+         * Default: <h3>
+         */
+        'title_reply_before'    => '',
+
+        /**
+         * Closing tag markup
+         *
+         * Default: </h3>
+         */
+        'title_reply_after'     => '',
+
+        /**
+         * Markup to display must be logged in message
+         *
+         * %1$s displays the message, %2$s generates the login link, %3$s displays the login link text
+         *
+         * Default: <p> %1$s <a href="%2$s">%3$s</a> </p>
+         */
+        'must_log_in'           => '',
+
+        /**
+         * Markup to display logged in as
+         *
+         * %1$s displays the message, %2$s generates the logout link, %3$s displays the logout link text
+         *
+         * Default: <p> %1$s <a href="%2$s">%3$s</a> </p>
+         */
+        'logged_in_as'          => '',
+
+        /**
+         * Markup used to wrap the comments note text
+         *
+         * %s displays the comments note
+         *
+         * Default: <p>%s</p>
+         */
+        'comment_notes_before'  => '',
+
+        /**
+         * Markup used to display reply to
+         *
+         * %1$s displays the message, %2$s generates the reply link, %3$s displays the reply the text
+         *
+         * Default: %1$s <a href="%2$s">%3$s</a>
+         */
+        'title_reply_to'        => '',
+
+    ),
+
+    /**
+     * Customize markup for cancel comment reply link HTML
+     */
+    'cancel_reply_markup'  => array(
+        /**
+         * Markup for the cancel comment reply link
+         *
+         * %1$s generates the cancel reply link, %2$s displays the text, %3$s generates the style attribute
+         *
+         * Default: <a href="%1$s" %3$s>%2$s</a>
+         */
+        'container'  => '',
+    ),
+
+    /**
+     * Customize markup for comment form fields
+     */
+    'fields_markup'    => array(
+
+        /**
+         * Markup to display author field
+         *
+         * %1$s generates the input field name, %2$s holds the value of the field
+         *
+         * Default: <p><label>Fullname</label><input type="text" name="%1$s" value="%2$s" /></p><br />
+         */
+        'author'    => '',
+
+        /**
+         * Markup to display email field
+         *
+         * %1$s generates the input field name, %2$s holds the value of the field
+         *
+         * Default: <p><label>Email Address</label><input type="email" name="%1$s" value="%2$s" /></p><br />
+         */
+        'email'     => '',
+
+        /**
+         * Markup to display comment field
+         *
+         * %s generates the textarea field name
+         *
+         * Default: <p><label>Your Comment</label><textarea name="%s"></textarea></p><br />
+         */
+        'comment'   => '',
+
+        /**
+         * Markup to display cookie consent field
+         *
+         * %1$s generates the checbox field name, %2$s adds checked attribute to the field, %3$s displays the consent text
+         *
+         * Default: <p><input type="checkbox" name="%1$s" value="yes" %2$s /><label>%3$s</label></p><br />
+         */
+        'cookies'   => '',
+
+    ),
+
+    /**
+     * Customize markup for filtering the submit field for the comment form to display
+     */
+    'submit_field_markup'   => array(
+        /**
+         * Default: <p> %1$s %2$s </p>
+         */
+        'container' => '',
+
+        /**
+         * Markup for the submit element. Can be input element or button
+         *
+         * %1$s generates the field name, %2$s generates the field id
+         *
+         * Default: <button type="submit" name="%1$s" id="%2$s">Add Comment</button>
+         */
+        'button'    => '',
 
     ),
 
