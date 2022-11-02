@@ -32,4 +32,20 @@
 
     <body <?php body_class() ?>>
 
-        <?php wp_body_open(); ?>
+    <?php
+
+    wp_body_open();
+
+    if ( has_nav_menu( 'wts_mobile_menu' ) ) {
+        wp_nav_menu( array(
+            'theme_location'  => 'wts_mobile_menu',
+        ) );
+    }
+
+    if ( has_nav_menu( 'wts_pc_menu' ) ) {
+        wp_nav_menu( array(
+            'theme_location'  => 'wts_pc_menu',
+        ) );
+    }
+
+    ?>

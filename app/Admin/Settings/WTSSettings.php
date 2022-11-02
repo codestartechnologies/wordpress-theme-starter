@@ -67,9 +67,21 @@ if ( ! class_exists( 'WTSSettings' ) ) {
          * @param array $args   An array of arguements passed to add_settings_field()
          * @return void
          */
-        public function settings_field_cb( array $args ) : void
+        public function show_sidebar_field_cb( array $args ) : void
         {
-            //
+            $this->load_view( 'setting-fields.sidebar-active', $args );
+        }
+
+        /**
+         * Callback method for add_settings_field()
+         *
+         * @access public
+         * @param array $args   An array of arguements passed to add_settings_field()
+         * @return void
+         */
+        public function display_page_field_cb( array $args ) : void
+        {
+            $this->load_view( 'setting-fields.sidebar-page', $args );
         }
 
         /**
@@ -84,7 +96,7 @@ if ( ! class_exists( 'WTSSettings' ) ) {
          * @return void
          * @since 1.0.0
          */
-        public function settings_update_cb( $old_value, $value, string $option ) : void
+        public function update_sidebar_page_setting_cb( $old_value, $value, string $option ) : void
         {
             //
         }

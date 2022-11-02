@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains configuration settings for pagination
+ * This file contains configuration settings for posts pagination
  *
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
  * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3

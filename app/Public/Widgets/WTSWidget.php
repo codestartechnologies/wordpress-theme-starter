@@ -12,6 +12,7 @@
 
 namespace App\Public\Widgets;
 
+use Codestartechnologies\WordpressThemeStarter\Traits\PageViewLoader;
 use WP_Widget;
 
 if ( ! class_exists( 'WTSWidget' ) ) {
@@ -23,6 +24,7 @@ if ( ! class_exists( 'WTSWidget' ) ) {
      */
     final class WTSWidget extends WP_Widget
     {
+        use PageViewLoader;
 
         /**
          * Widget ID
@@ -91,7 +93,7 @@ if ( ! class_exists( 'WTSWidget' ) ) {
             }
 
             // load widget view
-            get_template_part( 'template-parts/widgets/wts-widget', null, array() );
+            $this->load_view( 'widgets.wts-widget', array(), 'public' );
 
             echo $args['after_widget'];
 

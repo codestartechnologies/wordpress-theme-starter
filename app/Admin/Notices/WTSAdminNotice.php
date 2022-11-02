@@ -40,7 +40,8 @@ if ( ! class_exists( 'WTSAdminNotice' ) ) {
          */
         public function notification() : void
         {
-            //
+            $message = __( '<b>Hello Admin!</b> Thanks for using WordPress Theme Starter Boiler-Plate!', 'wts' );
+            printf( '<div class="notice notice-info is-dismissible"><p>%s</p></div>', $message );
         }
     }
 }

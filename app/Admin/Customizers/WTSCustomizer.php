@@ -49,12 +49,12 @@ if ( ! class_exists( 'WTSCustomizer' ) ) {
          * Handle active_callback arguement for WP_Customize_Manager::add_section()
          *
          * @access public
-         * @return mixed
+         * @return bool
          * @since 1.0.0
          */
-        public function section_arg_active_callback() : mixed
+        public function wts_footer_menu_2_section_cb() : bool
         {
-            //
+            return true;
         }
 
         /**
@@ -68,57 +68,25 @@ if ( ! class_exists( 'WTSCustomizer' ) ) {
          * @return \WP_Error
          * @since 1.0.0
          */
-        public function setting_arg_validate_callback( \WP_Error $validity, string $value ) : \WP_Error
+        public function wts_footer_menu_2_active_validate_callback( \WP_Error $validity, string $value ) : \WP_Error
         {
-
-            /**
-             * Handle validation errors for a setting
-             *
-             * Example:
-             *
-             * if ( false ) {
-             *    $validity->add();
-             * }
-             *
-             */
+            if ( ! in_array( $value, array( 'yes', 'no' ), true ) ) {
+                $validity->add( 'wts_customize', esc_html__( 'Value for "Footer Menu Two Visibility" must either be "Yes" or "No"!', 'wts' ) );
+            }
 
             return $validity;
-        }
-
-        /**
-         * Handle sanitize_callback arguement for WP_Customize_Manager::add_setting()
-         *
-         * @access public
-         * @return mixed
-         * @since 1.0.0
-         */
-        public function setting_arg_sanitize_callback() : mixed
-        {
-            //
         }
 
         /**
          * Handle active_callback arguement for WP_Customize_Manager::add_control()
          *
          * @access public
-         * @return mixed
+         * @return bool
          * @since 1.0.0
          */
-        public function control_arg_active_callback() : mixed
+        public function wts_footer_menu_2_active_control_active_cb() : bool
         {
-            //
-        }
-
-        /**
-         * Handle active_callback arguement for WP_Customize_Manager::add_control() method of type WP_Customize_Media_Control.
-         *
-         * @access public
-         * @return mixed
-         * @since 1.0.0
-         */
-        public function media_control_arg_active_callback() : mixed
-        {
-            //
+            return is_post_type_archive( array( 'page', 'post' ) );
         }
     }
 }

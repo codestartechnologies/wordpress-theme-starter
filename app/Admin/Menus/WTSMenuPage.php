@@ -53,7 +53,10 @@ if ( ! class_exists( 'WTSMenuPage' ) ) {
          */
         public function view_args(): array
         {
-            return array();
+            return array(
+
+                'random_string' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem suscipit voluptas aliquam in nisi, iste dolorem incidunt possimus ab, ullam mollitia, velit nostrum sunt repellat a ipsum laborum repudiandae!',
+            );
         }
 
         /**
