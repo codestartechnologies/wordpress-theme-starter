@@ -22,7 +22,7 @@ if ( ! function_exists( 'wts_config' ) ) {
         $file_path = WTS_CONFIGS_DIR . $file_name . '.php';
 
         if ( is_file( $file_path ) ) {
-            $config_arr = require_once $file_path;
+            $config_arr = require $file_path;
             $config_key = $name_arr[1] ?? null;
 
             if ( array_key_exists( $config_key, $config_arr ) ) {
