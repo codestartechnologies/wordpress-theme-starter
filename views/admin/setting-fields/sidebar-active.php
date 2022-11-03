@@ -20,4 +20,4 @@ $value = $option[ $label_for ] ?? null;
 ?>
 
 <input type="checkbox" name="<?php echo $option_name . '[' . $label_for . ']'; ?>" id="<?php echo $label_for; ?>" value="yes"
-    class="regular-text" <?php checked( $value ); ?> />
+    class="regular-text" <?php checked( $value, 'yes' ); ?> />

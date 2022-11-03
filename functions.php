@@ -237,7 +237,7 @@ final class WTSTheme {
                  *
                  * You can comment out any WTS default admin notification
                  */
-                WTSAdminNotice::class,
+                new WTSAdminNotice(),
 
                 /**
                  * You can add custom classes for adding admin notifications below

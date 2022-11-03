@@ -86,7 +86,7 @@ if ( ! class_exists( 'WTSCustomizer' ) ) {
          */
         public function wts_footer_menu_2_active_control_active_cb() : bool
         {
-            return is_post_type_archive( array( 'page', 'post' ) );
+            return is_page();
         }
     }
 }

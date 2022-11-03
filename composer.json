@@ -16,7 +16,7 @@
     "autoload": {
         "psr-4": {
             "Codestartechnologies\\WordpressThemeStarter\\": "src/",
-            "app\\": "app/"
+            "App\\": "app/"
         },
         "files": [
             "helpers/helpers.php",

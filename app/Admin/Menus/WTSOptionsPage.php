@@ -54,7 +54,9 @@ if ( ! class_exists( 'WTSOptionsPage' ) ) {
          */
         public function view_args(): array
         {
-            return array();
+            return array(
+                'page' => $this->menu_slug,
+            );
         }
 
         /**
