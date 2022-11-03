@@ -37,12 +37,14 @@
     wp_body_open();
 
     if ( has_nav_menu( 'wts_mobile_menu' ) ) {
+        printf( '<h4>%s</h4>', wp_get_nav_menu_name( 'wts_mobile_menu' ) );
         wp_nav_menu( array(
             'theme_location'  => 'wts_mobile_menu',
         ) );
     }
 
     if ( has_nav_menu( 'wts_pc_menu' ) ) {
+        printf( '<h4>%s</h4>', wp_get_nav_menu_name( 'wts_pc_menu' ) );
         wp_nav_menu( array(
             'theme_location'  => 'wts_pc_menu',
         ) );
