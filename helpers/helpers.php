@@ -46,7 +46,7 @@ if ( ! function_exists( 'wts_wp_list_comments_cb' ) ) {
      */
     function wts_wp_list_comments_cb( WP_Comment $comment, array $args, int $depth ) : void
     {
-        $markup = wts_config( 'comments.comments_lists_markup' );
+        $markup = array_filter( ( array ) wts_config( 'comments.comments_lists_markup' ) );
         $markup = wp_parse_args( ( array ) $markup, array(
             'list_open'         => '<li %1$s id="comment-%2$s">',
             'awaiting_approval' => '<p><em class="comment-awaiting-moderation">%s</em></p>',

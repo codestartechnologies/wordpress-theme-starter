@@ -622,7 +622,7 @@ if ( ! class_exists( 'Hooks' ) ) {
          */
         public function filter_comment_form_defaults( array $defaults ) : array
         {
-            $markup = wts_config( 'comments.form_defaults_markup' );
+            $markup = array_filter( ( array ) wts_config( 'comments.form_defaults_markup' ) );
             $markup = wp_parse_args( (array) $markup, array(
                 'title_reply_before'    => '<h3>',
                 'title_reply_after'     => '</h3>',
@@ -665,7 +665,7 @@ if ( ! class_exists( 'Hooks' ) ) {
         {
             $style = isset( $_GET['replytocom'] ) ? '' : ' style="display:none;"';
 
-            $markup = wts_config( 'comments.cancel_reply_markup' );
+            $markup = array_filter( ( array ) wts_config( 'comments.cancel_reply_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
                 'container'  => '<a href="%1$s" %3$s>%2$s</a>',
             ) );
@@ -696,7 +696,7 @@ if ( ! class_exists( 'Hooks' ) ) {
             unset( $comment_fields['url'] );
             unset( $comment_fields['cookies'] );
 
-            $markup = wts_config( 'comments.fields_markup' );
+            $markup = array_filter( ( array ) wts_config( 'comments.fields_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
                 'author'    => __( '<p><label>Fullname</label><input type="text" name="%1$s" value="%2$s" /></p><br />', 'wts' ),
                 'email'     => __( '<p><label>Email Address</label><input type="email" name="%1$s" value="%2$s" /></p><br />', 'wts' ),
@@ -733,7 +733,7 @@ if ( ! class_exists( 'Hooks' ) ) {
          */
         public function filter_comment_form_submit_field( string $submit_field, array $args ) : string
         {
-            $markup = wts_config( 'comments' );
+            $markup = array_filter( ( array ) wts_config( 'comments.submit_field_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
                 'container' => '<p> %1$s %2$s </p>',
                 'button'    => __( '<button type="submit" name="%1$s" id="%2$s">Add Comment</button>', 'wts' ),

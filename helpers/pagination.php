@@ -35,7 +35,7 @@ if ( ! function_exists( 'wts_paginate' ) ) {
         }
 
         if ( 1 != $pages ) {
-            $markup = wts_config( 'comments.pagination_markup' );
+            $markup = array_filter( ( array ) wts_config( 'paginations.pagination_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
                 'wrapper_open'      => '<nav>',
                 'page_first'        => '<a href="%s">&laquo;</a>',
@@ -105,7 +105,7 @@ if ( ! function_exists( 'wts_simple_paginate' ) ) {
         }
 
         if (  1 != $pages  ) {
-            $markup = wts_config( 'comments.simple_pagination_markup' );
+            $markup = array_filter( ( array ) wts_config( 'paginations.simple_pagination_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
                 'prev'  => '<a href="%1$s">%2$s</a>',
                 'next'  => '<a href="%1$s">%2$s</a>',
