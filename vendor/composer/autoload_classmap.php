@@ -6,16 +6,6 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'App\\Admin\\Customizers\\WTSCustomizer' => $baseDir . '/app/Admin/Customizers/WTSCustomizer.php',
-    'App\\Admin\\Menus\\WTSMenuPage' => $baseDir . '/app/Admin/Menus/WTSMenuPage.php',
-    'App\\Admin\\Menus\\WTSOptionsPage' => $baseDir . '/app/Admin/Menus/WTSOptionsPage.php',
-    'App\\Admin\\Menus\\WTSThemePage' => $baseDir . '/app/Admin/Menus/WTSThemePage.php',
-    'App\\Admin\\Notices\\WTSAdminNotice' => $baseDir . '/app/Admin/Notices/WTSAdminNotice.php',
-    'App\\Admin\\Settings\\WTSSettings' => $baseDir . '/app/Admin/Settings/WTSSettings.php',
-    'App\\Constants' => $baseDir . '/app/Constants.php',
-    'App\\Hooks' => $baseDir . '/app/Hooks.php',
-    'App\\Public\\Sidebars\\WTSSidebar' => $baseDir . '/app/Public/Sidebars/WTSSidebar.php',
-    'App\\Public\\Widgets\\WTSWidget' => $baseDir . '/app/Public/Widgets/WTSWidget.php',
     'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\AdminNotice' => $baseDir . '/src/Abstracts/AdminNotice.php',
     'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\Customizer' => $baseDir . '/src/Abstracts/Customizer.php',
     'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\MenuPage' => $baseDir . '/src/Abstracts/MenuPage.php',
@@ -25,7 +15,6 @@ return array(
     'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\ThemePage' => $baseDir . '/src/Abstracts/ThemePage.php',
     'Codestartechnologies\\WordpressThemeStarter\\Core\\Bootstrap' => $baseDir . '/src/Core/Bootstrap.php',
     'Codestartechnologies\\WordpressThemeStarter\\Core\\Constants' => $baseDir . '/src/Core/Constants.php',
-    'Codestartechnologies\\WordpressThemeStarter\\Core\\Hooks' => $baseDir . '/src/Core/Hooks.php',
     'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\ActionHooks' => $baseDir . '/src/Interfaces/ActionHooks.php',
     'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\FilterHooks' => $baseDir . '/src/Interfaces/FilterHooks.php',
     'Codestartechnologies\\WordpressThemeStarter\\Traits\\PageViewLoader' => $baseDir . '/src/Traits/PageViewLoader.php',

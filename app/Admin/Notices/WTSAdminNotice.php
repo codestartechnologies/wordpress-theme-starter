@@ -10,7 +10,7 @@
  * @since       1.0.0
  */
 
-namespace App\Admin\Notices;
+namespace WTS_Theme\App\Admin\Notices;
 
 use Codestartechnologies\WordpressThemeStarter\Abstracts\AdminNotice as AbstractsAdminNotice;
 

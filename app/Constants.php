@@ -10,9 +10,7 @@
  * @since      1.0.0
  */
 
-namespace App;
-
-use Codestartechnologies\WordpressThemeStarter\Core\Constants as CoreConstants;
+namespace WTS_Theme\App;
 
 /**
  * Prevent direct access to this file.
@@ -28,7 +26,7 @@ if ( ! class_exists( 'Constants' ) ) {
      * @package     WordpressThemeStarter
      * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
-    class Constants extends CoreConstants
+    final class Constants
     {
         /**
          * Define core constants.
@@ -37,11 +35,6 @@ if ( ! class_exists( 'Constants' ) ) {
          */
         public static function define_constants() : void
         {
-            /**
-             * Add WordPress Theme Starter default constants
-             */
-            parent::define_core_constants();
-
             /**
              * Define constants needed by your theme below
              */

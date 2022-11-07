@@ -10,7 +10,7 @@
  * @since      1.0.0
  */
 
-namespace App\Public\Sidebars;
+namespace WTS_Theme\App\Public\Sidebars;
 
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Sidebar as AbstractsSidebar;
 

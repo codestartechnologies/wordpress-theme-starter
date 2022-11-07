@@ -10,7 +10,7 @@
  * @since      1.0.0
  */
 
-namespace App\Admin\Settings;
+namespace WTS_Theme\App\Admin\Settings;
 
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Settings as AbstractsSettings;
 use Codestartechnologies\WordpressThemeStarter\Traits\PageViewLoader;

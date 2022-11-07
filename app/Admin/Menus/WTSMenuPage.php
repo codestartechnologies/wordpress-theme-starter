@@ -10,7 +10,7 @@
  * @since      1.0.0
  */
 
-namespace App\Admin\Menus;
+namespace WTS_Theme\App\Admin\Menus;
 
 use Codestartechnologies\WordpressThemeStarter\Abstracts\MenuPage as AbstractsMenuPage;
 

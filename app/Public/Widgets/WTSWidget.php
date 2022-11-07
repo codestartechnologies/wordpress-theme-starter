@@ -10,7 +10,7 @@
  * @since      1.0.0
  */
 
-namespace App\Public\Widgets;
+namespace WTS_Theme\App\Public\Widgets;
 
 use Codestartechnologies\WordpressThemeStarter\Traits\PageViewLoader;
 use WP_Widget;

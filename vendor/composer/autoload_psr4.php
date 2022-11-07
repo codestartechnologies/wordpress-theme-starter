@@ -7,5 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Codestartechnologies\\WordpressThemeStarter\\' => array($baseDir . '/src'),
-    'App\\' => array($baseDir . '/app'),
 );

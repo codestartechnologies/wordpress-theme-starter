@@ -10,7 +10,7 @@
  * @since      1.0.0
  */
 
-namespace App\Admin\Customizers;
+namespace WTS_Theme\App\Admin\Customizers;
 
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Customizer as AbstractsCustomizer;
 

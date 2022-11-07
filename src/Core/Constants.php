@@ -29,7 +29,7 @@ if ( ! class_exists( 'Constants' ) ) {
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
-    class Constants {
+    final class Constants {
         /**
          * Define core constants.
          *

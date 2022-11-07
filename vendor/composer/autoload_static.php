@@ -17,10 +17,6 @@ class ComposerStaticInit1544251c497eeb8d2de05de0755efd22
         array (
             'Codestartechnologies\\WordpressThemeStarter\\' => 43,
         ),
-        'A' => 
-        array (
-            'App\\' => 4,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -28,23 +24,9 @@ class ComposerStaticInit1544251c497eeb8d2de05de0755efd22
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
-        'App\\' => 
-        array (
-            0 => __DIR__ . '/../..' . '/app',
-        ),
     );
 
     public static $classMap = array (
-        'App\\Admin\\Customizers\\WTSCustomizer' => __DIR__ . '/../..' . '/app/Admin/Customizers/WTSCustomizer.php',
-        'App\\Admin\\Menus\\WTSMenuPage' => __DIR__ . '/../..' . '/app/Admin/Menus/WTSMenuPage.php',
-        'App\\Admin\\Menus\\WTSOptionsPage' => __DIR__ . '/../..' . '/app/Admin/Menus/WTSOptionsPage.php',
-        'App\\Admin\\Menus\\WTSThemePage' => __DIR__ . '/../..' . '/app/Admin/Menus/WTSThemePage.php',
-        'App\\Admin\\Notices\\WTSAdminNotice' => __DIR__ . '/../..' . '/app/Admin/Notices/WTSAdminNotice.php',
-        'App\\Admin\\Settings\\WTSSettings' => __DIR__ . '/../..' . '/app/Admin/Settings/WTSSettings.php',
-        'App\\Constants' => __DIR__ . '/../..' . '/app/Constants.php',
-        'App\\Hooks' => __DIR__ . '/../..' . '/app/Hooks.php',
-        'App\\Public\\Sidebars\\WTSSidebar' => __DIR__ . '/../..' . '/app/Public/Sidebars/WTSSidebar.php',
-        'App\\Public\\Widgets\\WTSWidget' => __DIR__ . '/../..' . '/app/Public/Widgets/WTSWidget.php',
         'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\AdminNotice' => __DIR__ . '/../..' . '/src/Abstracts/AdminNotice.php',
         'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\Customizer' => __DIR__ . '/../..' . '/src/Abstracts/Customizer.php',
         'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\MenuPage' => __DIR__ . '/../..' . '/src/Abstracts/MenuPage.php',
@@ -54,7 +36,6 @@ class ComposerStaticInit1544251c497eeb8d2de05de0755efd22
         'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\ThemePage' => __DIR__ . '/../..' . '/src/Abstracts/ThemePage.php',
         'Codestartechnologies\\WordpressThemeStarter\\Core\\Bootstrap' => __DIR__ . '/../..' . '/src/Core/Bootstrap.php',
         'Codestartechnologies\\WordpressThemeStarter\\Core\\Constants' => __DIR__ . '/../..' . '/src/Core/Constants.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Core\\Hooks' => __DIR__ . '/../..' . '/src/Core/Hooks.php',
         'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\ActionHooks' => __DIR__ . '/../..' . '/src/Interfaces/ActionHooks.php',
         'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\FilterHooks' => __DIR__ . '/../..' . '/src/Interfaces/FilterHooks.php',
         'Codestartechnologies\\WordpressThemeStarter\\Traits\\PageViewLoader' => __DIR__ . '/../..' . '/src/Traits/PageViewLoader.php',

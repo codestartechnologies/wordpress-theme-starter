@@ -13,7 +13,6 @@
 
 namespace Codestartechnologies\WordpressThemeStarter\Core;
 
-use App\Hooks;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\AdminNotice;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Customizer;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\MenuPage;
@@ -23,6 +22,7 @@ use Codestartechnologies\WordpressThemeStarter\Abstracts\Sidebar;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\ThemePage;
 use Codestartechnologies\WordpressThemeStarter\Interfaces\ActionHooks;
 use Codestartechnologies\WordpressThemeStarter\Traits\Validator;
+use WTS_Theme\App\Hooks;
 
 /**
  * Prevent direct access to this file.

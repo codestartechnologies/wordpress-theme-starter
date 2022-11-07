@@ -15,8 +15,7 @@
     "license": "AGPL-3.0-or-later",
     "autoload": {
         "psr-4": {
-            "Codestartechnologies\\WordpressThemeStarter\\": "src/",
-            "App\\": "app/"
+            "Codestartechnologies\\WordpressThemeStarter\\": "src/"
         },
         "files": [
             "helpers/helpers.php",
