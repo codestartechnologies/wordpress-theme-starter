@@ -28,7 +28,7 @@ if ( have_posts() ) {
 
         };
 
-        the_date( '', '<p><b><i>', '</i></b></p>' );
+        printf('<p><b><i>%s</i></b></p>', get_the_date( 'd M, Y' ) );
 
         if ( is_archive() || is_search() || ! is_singular() ) {
 
