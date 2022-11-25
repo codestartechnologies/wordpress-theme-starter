@@ -18,9 +18,10 @@
             "Codestartechnologies\\WordpressThemeStarter\\": "src/"
         },
         "files": [
-            "helpers/helpers.php",
-            "helpers/pagination.php",
-            "helpers/posts.php"
+            "src/helpers/helpers.php",
+            "src/helpers/pagination.php",
+            "src/helpers/posts.php",
+            "app/functions.php"
         ]
     },
     "authors": [

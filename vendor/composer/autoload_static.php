@@ -7,9 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit1544251c497eeb8d2de05de0755efd22
 {
     public static $files = array (
-        'd2d0766ea75b047d946a448b9ae59dfc' => __DIR__ . '/../..' . '/helpers/helpers.php',
-        'cb950b35647faa8508a0cbc8ffc14dd7' => __DIR__ . '/../..' . '/helpers/pagination.php',
-        'df3cacaad25bfb982a8eee475fdbf2a3' => __DIR__ . '/../..' . '/helpers/posts.php',
+        '7993c7a9eda04525716ff1a619ebd877' => __DIR__ . '/../..' . '/src/helpers/helpers.php',
+        '15ef77ece1ecd847f59899029f63a2db' => __DIR__ . '/../..' . '/src/helpers/pagination.php',
+        '44a25df15d963869dcd823afd3a7167d' => __DIR__ . '/../..' . '/src/helpers/posts.php',
+        '2cd05568d7e55c3b0804c4f336ead34d' => __DIR__ . '/../..' . '/app/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (

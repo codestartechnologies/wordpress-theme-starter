@@ -6,7 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'd2d0766ea75b047d946a448b9ae59dfc' => $baseDir . '/helpers/helpers.php',
-    'cb950b35647faa8508a0cbc8ffc14dd7' => $baseDir . '/helpers/pagination.php',
-    'df3cacaad25bfb982a8eee475fdbf2a3' => $baseDir . '/helpers/posts.php',
+    '7993c7a9eda04525716ff1a619ebd877' => $baseDir . '/src/helpers/helpers.php',
+    '15ef77ece1ecd847f59899029f63a2db' => $baseDir . '/src/helpers/pagination.php',
+    '44a25df15d963869dcd823afd3a7167d' => $baseDir . '/src/helpers/posts.php',
+    '2cd05568d7e55c3b0804c4f336ead34d' => $baseDir . '/app/functions.php',
 );

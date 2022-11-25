@@ -8,10 +8,12 @@
  */
 
 return array(
+
     /**
      * Customize markups used in displaying pagination using wts_paginate()
      */
     'pagination_markup'         => array(
+
         /**
          * Markup for displaying the opening pagination container tag
          *
@@ -79,9 +81,14 @@ return array(
          * Default: </nav>
          */
         'wrapper_close'     => '',
+
     ),
 
+    /**
+     * Customize markups used in displaying pagination using wts_simple_paginate()
+     */
     'simple_pagination_markup'  => array(
+
         /**
          * Markup for displaying the link to the previous page
          *
