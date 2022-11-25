@@ -2,7 +2,7 @@
 /**
  * Bindings class file.
  *
- * This file contains Bindings class which returns classes that will be registered with the plugin.
+ * This file contains Bindings class which returns classes that will be registered with the theme.
  *
  * @package    WordpressPluginStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -30,7 +30,7 @@ if ( ! class_exists( 'Bindings' ) ) {
     /**
      * Class Bindings
      *
-     * This class returns classes that will be registered with the plugin.
+     * This class returns classes that will be registered with the theme.
      *
      * @package WordpressPluginStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -141,7 +141,7 @@ if ( ! class_exists( 'Bindings' ) ) {
          * @since 1.0.0
          */
         public static array $admin_notices = array(
-            WTSAdminNotice::class
+            WTSAdminNotice::class,
         );
     }
 }
