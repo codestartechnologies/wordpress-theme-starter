@@ -105,7 +105,7 @@ Some classes will need to specify the path to their config settings. Example `WT
 
 ## Fix For Class Namespace Conflicts
 
-To prevent *namespace* conflicts, ensure that classes you create in the **app** directory have unique *namespace*. Example: You can choose to prefix namespaces in **app/** with **Theme_Name**. Then you change all occurence of `WTS_Theme\App;` namespace to `Theme_Name\WTS_Theme\App`. Next, you open **autoloader.php** and change `$namespace = 'WTS_Theme\App';` to `$namespace = 'Theme_Name\WTS_Theme\App';`.
+To prevent *namespace* conflicts, ensure that classes you create in the **app** directory have unique *namespace*. Example: You can choose to prefix namespaces in **app/** with **Theme_Name**. Then you change all occurence of `WTS_Theme\App;` namespace to `Theme_Name\WTS_Theme\App`. Next, you open **autoloader.php** and change `$namespace = 'WTS_Theme\App';` to `$namespace = 'Theme_Name\WTS_Theme\App';` inside `wts_autoloader()` function.
 
 Classes in **src** directory should also have unique *namespace* that will not conflict with other *namespaces* that may be registered by another theme. This will will help prevent *namespace* conflicts that can occur between two or more WordPress themes built with different versions of **WordPress Theme Starter**. Example: `Codestartechnologies\WordpressThemeStarter\Abstracts;` namespace can be modified to `Theme_Name\Codestartechnologies\WordpressThemeStarter\Abstracts;`.
 
