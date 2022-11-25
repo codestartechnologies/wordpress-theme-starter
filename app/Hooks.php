@@ -86,6 +86,15 @@ if ( ! class_exists( 'Hooks' ) ) {
              */
             add_action( 'comment_form', array( $this, 'action_comment_form' ) );
 
+            /**
+             * Fires after the comment form.
+             */
+            add_action( 'comment_form_after', array( $this, 'action_comment_form_after' ) );
+
+            /**
+             * Fires before the comment form.
+             */
+            add_action( 'comment_form_before', array( $this, 'action_comment_form_before' ) );
         }
 
         /**
@@ -348,7 +357,9 @@ if ( ! class_exists( 'Hooks' ) ) {
          */
         public function action_comment_form_top() : void
         {
-            echo '<div id="wts-form-inner">';
+            $markup = wts_config( 'comments.after_open_form_tag' );
+            $markup = ( $markup ) ?: '<div id="wts-form-inner">';
+            echo $markup;
         }
 
         /**
@@ -362,7 +373,37 @@ if ( ! class_exists( 'Hooks' ) ) {
          */
         public function action_comment_form(int $post_id) : void
         {
-            echo '</div>';
+            $markup = wts_config( 'comments.before_close_form_tag' );
+            $markup = ( $markup ) ?: '</div>';
+            echo $markup;
+        }
+
+        /**
+         * "comment_form_after" action hook callback
+         *
+         * Fires after the comment form.
+         *
+         * @access public
+         * @since 1.0.0
+         */
+        public function action_comment_form_after() : void {
+            $markup = wts_config( 'comments.after_form' );
+            $markup = ( $markup ) ?: '<br />';
+            echo $markup;
+        }
+
+        /**
+         * "comment_form_before" action hook callback
+         *
+         * Fires before the comment form.
+         *
+         * @access public
+         * @since 1.0.0
+         */
+        public function action_comment_form_before() : void {
+            $markup = wts_config( 'comments.before_form' );
+            $markup = ( $markup ) ?: '';
+            echo $markup;
         }
 
         /**

@@ -78,6 +78,34 @@ return array(
     ),
 
     /**
+     * Customize the opening tag markup for html element that will be added after the opening comment form tag
+     *
+     * Default: <div id="wts-form-inner">
+     */
+    'after_open_form_tag' => '',
+
+    /**
+     * Customize the closing tag markup for html element that will be added before the closing comment form tag
+     *
+     * Default: </div>
+     */
+    'before_close_form_tag' => '',
+
+    /**
+     * Customize the markup for html element that will be added after the comment form
+     *
+     * Default: <br />
+     */
+    'after_form' => '',
+
+    /**
+     * Customize the markup for html element that will be added before the comment form
+     *
+     * Default:
+     */
+    'before_form' => '',
+
+    /**
      * Customize the markup used when filtering comment form default arguments.
      */
     'form_defaults_markup'  => array(
