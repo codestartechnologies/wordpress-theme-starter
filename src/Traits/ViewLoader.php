@@ -1,8 +1,8 @@
 <?php
 /**
- * PageViewLoader trait
+ * ViewLoader trait
  *
- * This file contains PageViewLoader trait file which contains methods for classes that load views in the admin area or public area of the site.
+ * This file contains ViewLoader trait file which contains methods for classes that load views in the admin area or public area of the site.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -20,16 +20,16 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! trait_exists( 'PageViewLoader' ) ) {
+if ( ! trait_exists( 'ViewLoader' ) ) {
     /**
-     * Trait PageViewLoader
+     * Trait ViewLoader
      *
      * This trait contains methods for loading views in the admin area or public area of the site.
      *
      * @package WordpressThemeStarter
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
-    trait PageViewLoader {
+    trait ViewLoader {
         /**
          * Include a view in the page
          *

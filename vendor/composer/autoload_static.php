@@ -38,8 +38,8 @@ class ComposerStaticInit1544251c497eeb8d2de05de0755efd22
         'Codestartechnologies\\WordpressThemeStarter\\Core\\Constants' => __DIR__ . '/../..' . '/src/Core/Constants.php',
         'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\ActionHooks' => __DIR__ . '/../..' . '/src/Interfaces/ActionHooks.php',
         'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\FilterHooks' => __DIR__ . '/../..' . '/src/Interfaces/FilterHooks.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Traits\\PageViewLoader' => __DIR__ . '/../..' . '/src/Traits/PageViewLoader.php',
         'Codestartechnologies\\WordpressThemeStarter\\Traits\\Validator' => __DIR__ . '/../..' . '/src/Traits/Validator.php',
+        'Codestartechnologies\\WordpressThemeStarter\\Traits\\ViewLoader' => __DIR__ . '/../..' . '/src/Traits/ViewLoader.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 

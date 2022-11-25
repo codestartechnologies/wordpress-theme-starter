@@ -17,7 +17,7 @@ return array(
     'Codestartechnologies\\WordpressThemeStarter\\Core\\Constants' => $baseDir . '/src/Core/Constants.php',
     'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\ActionHooks' => $baseDir . '/src/Interfaces/ActionHooks.php',
     'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\FilterHooks' => $baseDir . '/src/Interfaces/FilterHooks.php',
-    'Codestartechnologies\\WordpressThemeStarter\\Traits\\PageViewLoader' => $baseDir . '/src/Traits/PageViewLoader.php',
     'Codestartechnologies\\WordpressThemeStarter\\Traits\\Validator' => $baseDir . '/src/Traits/Validator.php',
+    'Codestartechnologies\\WordpressThemeStarter\\Traits\\ViewLoader' => $baseDir . '/src/Traits/ViewLoader.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
 );

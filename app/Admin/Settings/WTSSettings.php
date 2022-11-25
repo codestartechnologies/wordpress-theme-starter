@@ -13,7 +13,7 @@
 namespace WTS_Theme\App\Admin\Settings;
 
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Settings as AbstractsSettings;
-use Codestartechnologies\WordpressThemeStarter\Traits\PageViewLoader;
+use Codestartechnologies\WordpressThemeStarter\Traits\ViewLoader;
 
 /**
  * Prevent direct access to this file.
@@ -34,7 +34,7 @@ if ( ! class_exists( 'WTSSettings' ) ) {
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
     final class WTSSettings extends AbstractsSettings {
-        use PageViewLoader;
+        use ViewLoader;
 
         /**
          * WTSSettings Constructor

@@ -13,7 +13,7 @@
 namespace Codestartechnologies\WordpressThemeStarter\Abstracts;
 
 use Codestartechnologies\WordpressThemeStarter\Interfaces\ActionHooks;
-use Codestartechnologies\WordpressThemeStarter\Traits\PageViewLoader;
+use Codestartechnologies\WordpressThemeStarter\Traits\ViewLoader;
 
 /**
  * Prevent direct access to this file.
@@ -32,7 +32,7 @@ if ( ! class_exists( 'MenuPage' ) ) {
      * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
      */
     abstract class MenuPage implements ActionHooks {
-        use PageViewLoader;
+        use ViewLoader;
 
         /**
          * The text to be displayed in the title tags of the page when the menu is selected.
