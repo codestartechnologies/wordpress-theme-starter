@@ -116,7 +116,7 @@ if ( ! trait_exists( 'ViewLoader' ) ) {
          */
         public function invalid_view_type_message( $type ) : void
         {
-            $markup = array_filter( ( array ) wps_config( 'views.error_messages' ) );
+            $markup = array_filter( ( array ) wts_config( 'views.error_messages' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
                 'invalid_type'  => __(
                     '<h3 style="color: red;">View type does not exist!</h3><p>View of type <b>%s</b> is invalid. Valid types are <em>admin</em> and <em>site</em> </p>',
@@ -137,7 +137,7 @@ if ( ! trait_exists( 'ViewLoader' ) ) {
          */
         public function view_not_found_message( $file_path ) : void
         {
-            $markup = array_filter( ( array ) wps_config( 'views.error_messages' ) );
+            $markup = array_filter( ( array ) wts_config( 'views.error_messages' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
                 'not_found'  => __(
                     '<h3 style="color: red;">View could not be loaded!</h3><p>There was an error loading <b>%s</b>. Please check file exist and is readable. </p>',
