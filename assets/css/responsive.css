@@ -1,0 +1,185 @@
+@media screen and (min-width: 768px) {
+    .wts-container {
+        max-width: 630px;
+    }
+
+    .wts-title {
+        font-size: 25px;
+        padding-left: 10px;
+    }
+
+    /* Header Styles */
+
+    header {
+        background-color: #161616;
+    }
+
+    .wts-mobile-top-bar,
+    .wts-mobile-menu-container {
+        display: none !important;
+    }
+
+    .wts-desktop-menu-container,
+    .wts-desktop-top-bar {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    /* Footer Styles */
+
+    footer .wts-flex > * {
+        width: 30%;
+    }
+
+    /* Posts */
+
+    .wts-posts .wts-single-post {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .wts-posts.wts-posts-two-columns .wts-single-post,
+    .wts-posts.wts-posts-three-columns .wts-single-post {
+        box-shadow: 1px 1px 5px #3030305e;
+    }
+
+    .wts-posts.wts-posts-two-columns .wts-single-post:nth-child(2n) > .wts-single-post-header,
+    .wts-posts.wts-posts-three-columns .wts-single-post:nth-child(2n) > .wts-single-post-header {
+        order: 2;
+    }
+
+    .wts-posts.wts-posts-two-columns .wts-single-post,
+    .wts-posts.wts-posts-three-columns .wts-single-post {
+        width: calc((90% / 2) - 10px);
+    }
+
+    .wts-posts .wts-single-post .wts-single-post-content > *:not(.wts-single-post-title, .wts-single-post-meta, .wts-single-post-footer) {
+        display: block;
+    }
+
+    .wts-posts .wts-single-post .wts-single-post-title {
+        border-bottom: 1px solid #bdbdbd;
+        padding-bottom: 6px;
+    }
+
+    /* Comments List */
+
+    .wts-comments .wts-single-comment .wts-comment {
+        padding: 0 0 0 10px;
+    }
+
+    /* Post Navigation */
+
+    .wts-post-navigation .wts-post-excerpt {
+        display: block;
+    }
+
+    .wts-post-navigation .wts-previous-post > img,
+    .wts-post-navigation .wts-next-post > img {
+        display: block;
+        width: 40%;
+    }
+
+    /* 404 Page */
+
+    .wts-invalid-page-code {
+        font-size: 7rem;
+    }
+}
+
+@media screen and (min-width: 962px) {
+    .wts-container {
+        max-width: 940px;
+    }
+
+    /* Posts */
+
+    .wts-posts.wts-posts-three-columns .wts-single-post {
+        width: calc((90% / 3) - 10px);
+    }
+
+    /* Blog Section */
+
+    .wts-blog-container .wts-blog-section {
+        width: 65%;
+    }
+
+    .wts-blog-section article {
+        font-size: 18px;
+    }
+
+    /* Archive Posts */
+
+    .wts-blog-section .wts-archive-posts .wts-single-post {
+        align-items: center;
+    }
+
+    .wts-blog-section .wts-archive-posts .wts-single-post > * {
+        /* width: 60%; */
+        flex: 1;
+        padding-left: 10px;
+    }
+
+    .wts-blog-section .wts-archive-posts .wts-single-post > img,
+    .wts-blog-section .wts-archive-posts .wts-single-post > a {
+        flex: none;
+        width: 40%;
+        padding-left: 0;
+    }
+
+    .wts-blog-section .wts-archive-posts .wts-single-post:nth-child(2n) > * {
+        padding-left: 0;
+        padding-right: 10px;
+    }
+
+    .wts-blog-section .wts-archive-posts .wts-single-post:nth-child(2n) > img,
+    .wts-blog-section .wts-archive-posts .wts-single-post:nth-child(2n) > a {
+        padding-right: 0;
+        order: 2;
+    }
+
+    /* Comment Form */
+
+    .wts-blog-section form > .wts-flex > div {
+        width: calc((100% / 3) - 10px);
+    }
+
+    /* Sidebar */
+
+    .wts-sidebar {
+        width: 30%;
+        padding: 0 7px;
+    }
+
+    .wts-sidebar > div {
+        /* border: 1px solid #dddddd; */
+        border: 1px solid #d3df2e;
+    }
+
+    .wts-sidebar > div > *:not(.sidebar-title) {
+        padding: 0 10px 8px;
+        list-style-type: none;
+        margin: 0;
+        display: block;
+    }
+
+    .wts-sidebar > div form,
+    .wts-sidebar > div form.search-form {
+        padding-top: 12px;
+    }
+}
+
+@media screen and (min-width: 1100px) {
+    .wts-container {
+        max-width: 1020px;
+    }
+}
+
+@media screen and (min-width: 1350px) {
+    .wts-container {
+        max-width: 1340px;
+    }
+}
