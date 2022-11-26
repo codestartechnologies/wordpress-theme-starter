@@ -8,6 +8,7 @@
  */
 
 return array(
+
     /**
      * Initial values to create 'WordPress Theme Starter Sidebar' sidebar area.
      */
@@ -17,7 +18,7 @@ return array(
 
         'id'                => 'wts-sidebar',
 
-        'description'       => esc_html__( 'Widgets in this area are shown in the posts page', 'wts' ),
+        'description'       => esc_html__( 'Widgets in this area are shown in archive pages and single pages', 'wts' ),
 
         'class'             => '',
 
@@ -25,13 +26,17 @@ return array(
 
         'after_widget'      => '</div>',
 
-        'before_title'      => '<h4>',
+        'before_title'      => '<h4 class="sidebar-title">',
 
         'after_title'       => '</h4>',
 
         'before_sidebar'    => '',
 
-        'after_sidebar'     => '<br />',
+        'after_sidebar'     => '',
     ),
+
+    /**
+     * Add configuration settings for your sidebar areas below
+     */
 
 );

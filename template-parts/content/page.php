@@ -22,43 +22,71 @@
                     <?php get_template_part( 'template-parts/content/posts' ); ?>
                 </section>
         <?php
+            } elseif ( is_page() ) {
+        ?>
+                <section>
+                    <?php
+                        while ( have_posts() ) : the_post();
+                            the_content();
+                        endwhile;
+                    ?>
+                </section>
+        <?php
             } else {
-                while ( have_posts() ) {
-                    the_post();
+        ?>
+                <div class="wts-flex wts-blog-container">
 
-                    printf( '<h2>%s</h2>', get_the_title() );
+                    <!-- blog section -->
+                    <section class="wts-blog-section">
+                        <?php
+                            while ( have_posts() ) {
+                                the_post();
 
-                    if ( has_post_thumbnail() ) {
+                                printf( '<h2>%s</h2>', get_the_title() );
 
-                        if ( is_singular() ) {
+                                if ( has_post_thumbnail() ) {
 
-                            printf( '<p>%s</p><br />', get_the_post_thumbnail( null, 'medium_large' ) );
+                                    if ( is_singular() ) {
 
-                        } else {
+                                        printf( '<p>%s</p><br />', get_the_post_thumbnail( null, 'medium_large' ) );
 
-                            printf( '<p><a href="%1$s">%2$s</a></p><br />', get_the_permalink(), get_the_post_thumbnail( null, 'medium' ) );
+                                    } else {
 
-                        };
+                                        printf( '<p><a href="%1$s">%2$s</a></p><br />', get_the_permalink(), get_the_post_thumbnail( null, 'medium' ) );
 
-                    };
+                                    };
 
-                    printf('<p><b><i>%s</i></b></p>', get_the_date( 'd M, Y' ) );
+                                };
 
-                    if ( is_archive() || is_search() || ! is_singular() ) {
+                                printf('<p><b><i>%s</i></b></p>', get_the_date( 'd M, Y' ) );
 
-                        printf( '<div>%s</div>', get_comments_number_text() );
+                                if ( is_archive() || is_search() || ! is_singular() ) {
 
-                        printf( '<p>%s</p>', get_the_excerpt() );
+                                    printf( '<div>%s</div>', get_comments_number_text() );
 
-                        the_shortlink( esc_html__( 'See Post', 'wts' ) );
+                                    printf( '<p>%s</p>', get_the_excerpt() );
 
-                    } else {
+                                    the_shortlink( esc_html__( 'See Post', 'wts' ) );
 
-                        printf( '<p>%s</p>', get_the_content() );
+                                } else {
 
-                    }
+                                    printf( '<p>%s</p>', get_the_content() );
 
-                }
+                                }
+
+                            }
+                        ?>
+                    </section>
+                    <!-- / blog section -->
+
+                    <?php
+                        if ( is_archive() || is_singular() ) {
+                            get_sidebar();
+                        }
+                    ?>
+
+                </div>
+        <?php
             }
 
             if ( is_singular() ) {
@@ -74,11 +102,7 @@
 
             if (  is_archive() || is_search() || ! is_singular()  ) {
 
-                // printf( '<p>%s</p>', get_the_posts_pagination() );
-
                 wts_paginate();
-
-                // wts_simple_paginate();
 
             } elseif ( is_single() ) {
 
@@ -92,10 +116,6 @@
 
             esc_html_e( 'Sorry, no posts matched your criteria.', 'wts' );
 
-        }
-
-        if ( ( is_archive() || is_singular() || is_home() ) && ! is_page() ) {
-            get_sidebar();
         }
 
         ?>
