@@ -71,6 +71,13 @@ if ( ! class_exists( 'Constants' ) ) {
             }
 
             /**
+             * Directory uri for image files
+             */
+            if ( ! defined( 'WTS_IMG_URI' ) ) {
+                define( 'WTS_IMG_URI', trailingslashit( WTS_URI . 'assets/images' ) );
+            }
+
+            /**
              * Directory for storing views shown in the admin area
              */
             if ( ! defined( 'WTS_ADMIN_VIEWS_DIR' ) ) {

@@ -315,7 +315,21 @@ if ( ! class_exists( 'Hooks' ) ) {
          */
         public function enqueue_scripts() : void
         {
-            //
+            /**
+             * Enqueue wts-template CSS files
+             */
+            wp_enqueue_style( 'wts-template', WTS_TEMPLATE_CSS, array(), WTS_THEME_VERSION );
+            wp_enqueue_style( 'wts-template-responsive', WTS_TEMPLATE_RESPONSIVE_CSS, array(), WTS_THEME_VERSION );
+
+            /**
+             * Enqueue wts-template JS files
+             */
+            wp_enqueue_script( 'wts-template', WTS_TEMPLATE_JS, array(), WTS_THEME_VERSION, true );
+
+            /**
+             * You can enqueue your custom css files below
+             *
+             */
         }
 
         /**
@@ -424,7 +438,7 @@ if ( ! class_exists( 'Hooks' ) ) {
             }
 
             if ( 'wts_pc_menu' === $args['theme_location'] ) {
-                $args['menu_class'] = 'wts-pc-menu';
+                $args['menu_class'] = 'wts-pc-menu wts-fix-float';
                 $args['menu_id'] = 'WTSPCMenu';
             }
 
@@ -463,11 +477,6 @@ if ( ! class_exists( 'Hooks' ) ) {
                             : array( 'wts-pc-menu-item', );
                         $classes[] = ( $menu_item->current ) ? 'active' : '';
                         break;
-                    case 1:
-                        $classes = ( in_array( 'menu-item-has-children', $classes ) )
-                            ? array( 'wts-pc-menu-item', 'wts-pc-menu-dropdown-item-lv1', )
-                            : array( 'wts-pc-menu-item', );
-                        break;
                     default:
                         $classes = array( 'wts-pc-menu-item', );
                 }
@@ -479,7 +488,6 @@ if ( ! class_exists( 'Hooks' ) ) {
                         $classes = ( in_array( 'menu-item-has-children', $classes ) )
                             ? array( 'wts-mobile-menu-item', 'wts-mobile-menu-dropdown-item', )
                             : array( 'wts-mobile-menu-item', );
-                        $classes[] = ( $menu_item->current ) ? 'active' : '';
                         break;
                     case 1:
                         $classes = ( in_array( 'menu-item-has-children', $classes ) )
@@ -489,6 +497,8 @@ if ( ! class_exists( 'Hooks' ) ) {
                     default:
                         $classes = array( 'wts-mobile-menu-item', );
                 }
+
+                $classes[] = ( $menu_item->current ) ? 'active' : '';
             }
 
             return $classes;
@@ -550,18 +560,12 @@ if ( ! class_exists( 'Hooks' ) ) {
             if ( 'wts_pc_menu' === $args->theme_location ) {
                 switch ( $depth ) {
                     case 0:
-                        $args->link_after = ( in_array( 'menu-item-has-children', $menu_item->classes ) )
-                            ? '&nbsp;$nbsp;<i>&downarrow;</i>'
-                            : '';
-                        break;
-                    case 1:
-                        $args->link_after = ( in_array( 'menu-item-has-children', $menu_item->classes ) )
-                            ? '&nbsp;$nbsp;<i>&downarrow;</i>'
-                            : '';
-                        break;
-                    case 2:
+                        $args->link_before = '';
                         $args->link_after = '';
                         break;
+                    default:
+                        $args->link_before = '&blacktriangleright; ';
+                        $args->link_after = '&nbsp;';
                 }
             }
 
@@ -604,13 +608,13 @@ if ( ! class_exists( 'Hooks' ) ) {
             if ( 'wts_mobile_menu' === $args->theme_location ) {
                 switch ( $depth ) {
                     case 0:
-                        $atts['class'] = ( in_array( 'menu-item-has-children', $menu_item->classes ) )
-                            ? 'wts-mobile-menu-link wts-mobile-menu-link-has-dropdown'
-                            : 'wts-mobile-menu-link';
+                        $atts['class'] = 'wts-mobile-menu-link';
                         break;
                     default:
                         $atts['class'] = 'wts-mobile-menu-link wts-mobile-menu-dropdown-link';
                 }
+
+                $atts['class'] .= ( in_array( 'menu-item-has-children', $menu_item->classes ) ) ? ' wts-mobile-menu-link-has-dropdown' : null;
             }
 
             return $atts;
