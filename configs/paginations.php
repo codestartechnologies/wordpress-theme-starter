@@ -17,7 +17,7 @@ return array(
         /**
          * Markup for displaying the opening pagination container tag
          *
-         * Default: <nav>
+         * Default: <ul class="wts-flex wts-posts-pagination">
          */
         'wrapper_open'      => '',
 
@@ -26,7 +26,7 @@ return array(
          *
          * %s is used for generating the link to the page
          *
-         * Default: <a href="%s">&laquo;</a>
+         * Default: <li><a href="%s">&laquo;</a></li>
          */
         'page_first'        => '',
 
@@ -35,7 +35,7 @@ return array(
          *
          * %s is used for generating the link to the page
          *
-         * Default: <a href="%s">&lsaquo;</a>
+         * Default: <li><a href="%s">&lsaquo;</a></li>
          */
         'page_prev'         => '',
 
@@ -44,7 +44,7 @@ return array(
          *
          * %s is used for generating the link to the page
          *
-         * Default: <a class="active" href="javascript:void(0);">%s</a>
+         * Default: <li><span>%s</span></li>
          */
         'page_current'      => '',
 
@@ -53,7 +53,7 @@ return array(
          *
          * %1$s is used for generating the link to the page, %2$s displays the markup text
          *
-         * Default: <a href="%1$s">%2$s</a>
+         * Default: <li><a href="%1$s">%2$s</a></li>
          */
         'page_links'        => '',
 
@@ -62,7 +62,7 @@ return array(
          *
          * %s is used for generating the link to the page
          *
-         * Default: <a href="%s">&rsaquo;</a>
+         * Default: <li><a href="%s">&rsaquo;</a></li>
          */
         'page_next'         => '',
 
@@ -71,14 +71,14 @@ return array(
          *
          * %s is used for generating the link to the page
          *
-         * Default: <a href="%s">&raquo;</a>
+         * Default: <li><a href="%s">&raquo;</a></li>
          */
         'page_last'         => '',
 
         /**
          * Markup for displaying the closing pagination container tag
          *
-         * Default: </nav>
+         * Default: </ul>
          */
         'wrapper_close'     => '',
 

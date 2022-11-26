@@ -1,81 +1,107 @@
-<?php
+<main>
 
-if ( is_search() ) {
+    <div class="wts-section-divider"></div>
 
-    _e( '<h5>Search:</h5>', 'wts' );
+    <div class="wts-container">
 
-    get_search_form();
+        <?php
 
-}
+        if ( is_search() ) {
 
-if ( have_posts() ) {
+            _e( '<h5>Search:</h5>', 'wts' );
 
-    while ( have_posts() ) { the_post();
-
-        printf( '<h2>%s</h2>', get_the_title() );
-
-        if ( has_post_thumbnail() ) {
-
-            if ( is_singular() ) {
-
-                printf( '<p>%s</p><br />', get_the_post_thumbnail( null, 'medium_large' ) );
-
-            } else {
-
-                printf( '<p><a href="%1$s">%2$s</a></p><br />', get_the_permalink(), get_the_post_thumbnail( null, 'medium' ) );
-
-            };
-
-        };
-
-        printf('<p><b><i>%s</i></b></p>', get_the_date( 'd M, Y' ) );
-
-        if ( is_archive() || is_search() || ! is_singular() ) {
-
-            printf( '<div>%s</div>', get_comments_number_text() );
-
-            printf( '<p>%s</p>', get_the_excerpt() );
-
-            the_shortlink( esc_html__( 'See Post', 'wts' ) );
-
-        } else {
-
-            printf( '<p>%s</p>', get_the_content() );
+            get_search_form();
 
         }
 
-    }
+        if ( have_posts() ) {
 
-} else {
+            if ( is_home() ) {
+        ?>
+                <section>
+                    <?php get_template_part( 'template-parts/content/posts' ); ?>
+                </section>
+        <?php
+            } else {
+                while ( have_posts() ) {
+                    the_post();
 
-    esc_html_e( 'Sorry, no posts matched your criteria.', 'wts' );
+                    printf( '<h2>%s</h2>', get_the_title() );
 
-}
+                    if ( has_post_thumbnail() ) {
 
-if ( is_singular() ) {
+                        if ( is_singular() ) {
 
-    comments_template();
+                            printf( '<p>%s</p><br />', get_the_post_thumbnail( null, 'medium_large' ) );
 
-    if ( comments_open() ) {
+                        } else {
 
-        comment_form();
+                            printf( '<p><a href="%1$s">%2$s</a></p><br />', get_the_permalink(), get_the_post_thumbnail( null, 'medium' ) );
 
-    }
+                        };
 
-}
+                    };
 
-if (  is_archive() || is_search() || ! is_singular()  ) {
+                    printf('<p><b><i>%s</i></b></p>', get_the_date( 'd M, Y' ) );
 
-    // printf( '<p>%s</p>', get_the_posts_pagination() );
+                    if ( is_archive() || is_search() || ! is_singular() ) {
 
-    wts_paginate();
+                        printf( '<div>%s</div>', get_comments_number_text() );
 
-    // wts_simple_paginate();
+                        printf( '<p>%s</p>', get_the_excerpt() );
 
-} elseif ( is_single() ) {
+                        the_shortlink( esc_html__( 'See Post', 'wts' ) );
 
-    printf( __( '<h5>Previous Post</h5><p>%s</p><br />', 'wts' ), get_previous_post_link() );
+                    } else {
 
-    printf( __( '<h5>Next Post</h5><p>%s</p><br />', 'wts' ), get_next_post_link() );
+                        printf( '<p>%s</p>', get_the_content() );
 
-}
+                    }
+
+                }
+            }
+
+            if ( is_singular() ) {
+
+                comments_template();
+
+                if ( comments_open() ) {
+
+                    comment_form();
+
+                }
+            }
+
+            if (  is_archive() || is_search() || ! is_singular()  ) {
+
+                // printf( '<p>%s</p>', get_the_posts_pagination() );
+
+                wts_paginate();
+
+                // wts_simple_paginate();
+
+            } elseif ( is_single() ) {
+
+                printf( __( '<h5>Previous Post</h5><p>%s</p><br />', 'wts' ), get_previous_post_link() );
+
+                printf( __( '<h5>Next Post</h5><p>%s</p><br />', 'wts' ), get_next_post_link() );
+
+            }
+
+        } else {
+
+            esc_html_e( 'Sorry, no posts matched your criteria.', 'wts' );
+
+        }
+
+        if ( ( is_archive() || is_singular() || is_home() ) && ! is_page() ) {
+            get_sidebar();
+        }
+
+        ?>
+
+    </div>
+
+    <div class="wts-section-divider"></div>
+
+</main>

@@ -37,14 +37,14 @@ if ( ! function_exists( 'wts_paginate' ) ) {
         if ( 1 != $pages ) {
             $markup = array_filter( ( array ) wts_config( 'paginations.pagination_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
-                'wrapper_open'      => '<nav>',
-                'page_first'        => '<a href="%s">&laquo;</a>',
-                'page_prev'         => '<a href="%s">&lsaquo;</a>',
-                'page_current'      => '<a class="active" href="javascript:void(0);">%s</a>',
-                'page_links'        => '<a href="%1$s">%2$s</a>',
-                'page_next'         => '<a href="%s">&rsaquo;</a>',
-                'page_last'         => '<a href="%s">&raquo;</a>',
-                'wrapper_close'     => '</nav>',
+                'wrapper_open'      => '<ul class="wts-flex wts-posts-pagination">',
+                'page_first'        => '<li><a href="%s">&laquo;</a></li>',
+                'page_prev'         => '<li><a href="%s">&lsaquo;</a></li>',
+                'page_current'      => '<li><span>%s</span></li>',
+                'page_links'        => '<li><a href="%1$s">%2$s</a></li>',
+                'page_next'         => '<li><a href="%s">&rsaquo;</a></li>',
+                'page_last'         => '<li><a href="%s">&raquo;</a></li>',
+                'wrapper_close'     => '</ul>',
             ) );
 
             ob_start();
@@ -114,11 +114,11 @@ if ( ! function_exists( 'wts_simple_paginate' ) ) {
             ob_start();
 
             if ( $paged > 1 ) {
-                echo sprintf( $markup['prev'], esc_attr( get_pagenum_link( $paged - 1 ) ), esc_html__( 'Previous page' ) );
+                echo sprintf( $markup['prev'], esc_attr( get_pagenum_link( $paged - 1 ) ), esc_html__( 'Previous page', 'wts' ) );
             }
 
             if ( $paged < $pages ) {
-                echo sprintf( $markup['prev'], esc_attr( get_pagenum_link( $paged + 1 ) ), esc_html__( 'Next page' ) );
+                echo sprintf( $markup['prev'], esc_attr( get_pagenum_link( $paged + 1 ) ), esc_html__( 'Next page', 'wts' ) );
             }
 
             echo ob_get_clean();
