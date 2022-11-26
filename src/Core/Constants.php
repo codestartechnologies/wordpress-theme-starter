@@ -81,14 +81,14 @@ if ( ! class_exists( 'Constants' ) ) {
              * Directory for storing views shown in the admin area
              */
             if ( ! defined( 'WTS_ADMIN_VIEWS_DIR' ) ) {
-                define( 'WTS_ADMIN_VIEWS_DIR', trailingslashit( WTS_PATH . 'views/admin' ) );
+                define( 'WTS_ADMIN_VIEWS_DIR', trailingslashit( 'views/admin' ) );
             }
 
             /**
              * Directory for storing views shown in the public area
              */
             if ( ! defined( 'WTS_PUBLIC_VIEWS_DIR' ) ) {
-                define( 'WTS_PUBLIC_VIEWS_DIR', trailingslashit( WTS_PATH . 'views/public' ) );
+                define( 'WTS_PUBLIC_VIEWS_DIR', trailingslashit( 'views/public' ) );
             }
 
             /**
