@@ -8,24 +8,26 @@
  */
 
 return array(
+
     /**
-     * Initial values to create "WordPress Theme Starter - Footer Menu Two" customizer section.
+     * Initial values to create "WordPress Theme Starter" customizer section.
      */
+
     'wts_customizer'  => array(
 
         'sections'  => array(
 
             array(
 
-                'id'    => 'wts_footer_menu_2_section',
+                'id'    => 'wts_section',
 
                 'args'  => array(
 
-                    'title'                 => esc_html__( 'WordPress Theme Starter - Footer Menu Two', 'wts' ),
+                    'title'                 => esc_html__( 'WordPress Theme Starter', 'wts' ),
 
-                    'description'           => esc_html__( 'Section for customizing "Footer Menu Two" on all pages.', 'wts' ),
+                    'description'           => esc_html__( 'Section for customizing "WordPress Theme Starter".', 'wts' ),
 
-                    'active_callback'       => 'wts_footer_menu_2_section_cb',
+                    'active_callback'       => 'wts_section_callback',
 
                     'description_hidden'    => false,
                 ),
@@ -36,15 +38,31 @@ return array(
 
             array(
 
-                'id'    => 'wts_footer_menu_2_active',
+                'id'    => 'wts_footer_text',
 
                 'args'  => array(
 
-                    'default'           => 'yes',
+                    'default'           => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus alias fuga quia laborum provident a odit cum neque sequi quibusdam praesentium ad reprehenderit rem amet laudantium iste, ut obcaecati impedit.',
 
                     'transport'         => 'refresh', //postMessage
 
-                    'validate_callback' => 'wts_footer_menu_2_active_validate_callback',
+                    'validate_callback' => 'wts_footer_text_validate_callback',
+
+                    'sanitize_callback' => 'sanitize_text_field',
+                ),
+            ),
+
+            array(
+
+                'id'    => 'wts_404_page_text',
+
+                'args'  => array(
+
+                    'default'           => esc_html__( 'This is an error page.', 'wts' ),
+
+                    'transport'         => 'refresh', //postMessage
+
+                    'validate_callback' => 'wts_footer_text_validate_callback',
 
                     'sanitize_callback' => 'sanitize_text_field',
                 ),
@@ -55,28 +73,37 @@ return array(
 
             array(
 
-                'id'    => 'wts_footer_menu_2_active_control',
+                'id'    => 'wts_footer_text_control',
 
                 'args'  => array(
 
-                    'settings'          => 'wts_footer_menu_2_active',
+                    'settings'          => 'wts_footer_text',
 
-                    'section'           => 'wts_footer_menu_2_section',
+                    'section'           => 'wts_section',
 
-                    'label'             => esc_html__( 'Footer Menu Two Visibility', 'wts' ),
+                    'label'             => esc_html__( 'Footer Text', 'wts' ),
 
-                    'description'       => esc_html__( 'Choose the visibility of "Footer Menu Two" nav menu on all pages".', 'wts' ),
+                    'type'              => 'textarea',
 
-                    'choices'           => array(
+                    'active_callback'   => 'wts_footer_text_control_active_callback',
+                ),
+            ),
 
-                        'yes'   => esc_html__( 'Yes (Make Visible)', 'wts' ),
+            array(
 
-                        'no'    => esc_html__( 'No (Hide on all pages)', 'wts' ),
-                    ),
+                'id'    => 'wts_404_page_text_control',
 
-                    'type'              => 'select',
+                'args'  => array(
 
-                    'active_callback'   => 'wts_footer_menu_2_active_control_active_cb',
+                    'settings'          => 'wts_404_page_text',
+
+                    'section'           => 'wts_section',
+
+                    'label'             => esc_html__( '404 Page Text', 'wts' ),
+
+                    'type'              => 'textarea',
+
+                    'active_callback'   => 'wts_404_page_text_control_active_callback',
                 ),
             ),
 
@@ -254,4 +281,9 @@ return array(
             ),
         ),
     ),
+
+    /**
+     * Add your custom customizer configuration settings below
+     */
+
 );

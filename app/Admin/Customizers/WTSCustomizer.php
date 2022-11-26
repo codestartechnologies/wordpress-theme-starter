@@ -52,7 +52,7 @@ if ( ! class_exists( 'WTSCustomizer' ) ) {
          * @return bool
          * @since 1.0.0
          */
-        public function wts_footer_menu_2_section_cb() : bool
+        public function wts_section_callback() : bool
         {
             return true;
         }
@@ -68,10 +68,10 @@ if ( ! class_exists( 'WTSCustomizer' ) ) {
          * @return \WP_Error
          * @since 1.0.0
          */
-        public function wts_footer_menu_2_active_validate_callback( \WP_Error $validity, string $value ) : \WP_Error
+        public function wts_footer_text_validate_callback( \WP_Error $validity, string $value ) : \WP_Error
         {
-            if ( ! in_array( $value, array( 'yes', 'no' ), true ) ) {
-                $validity->add( 'wts_customize', esc_html__( 'Value for "Footer Menu Two Visibility" must either be "Yes" or "No"!', 'wts' ) );
+            if ( ! is_string( $value ) || strlen( $value ) > 215 ) {
+                $validity->add( 'wts_customize', esc_html__( 'Value must be a string, and must not exceed 215 characters', 'wts' ) );
             }
 
             return $validity;
@@ -84,9 +84,21 @@ if ( ! class_exists( 'WTSCustomizer' ) ) {
          * @return bool
          * @since 1.0.0
          */
-        public function wts_footer_menu_2_active_control_active_cb() : bool
+        public function wts_footer_text_control_active_callback() : bool
         {
-            return is_page();
+            return true;
+        }
+
+        /**
+         * Handle active_callback arguement for WP_Customize_Manager::add_control()
+         *
+         * @access public
+         * @return bool
+         * @since 1.0.0
+         */
+        public function wts_404_page_text_control_active_callback() : bool
+        {
+            return is_404();
         }
     }
 }
