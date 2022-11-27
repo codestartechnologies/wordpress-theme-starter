@@ -49,17 +49,18 @@ if ( ! function_exists( 'wts_wp_list_comments_cb' ) ) {
         $markup = array_filter( ( array ) wts_config( 'comments.comments_lists_markup' ) );
         $markup = wp_parse_args( ( array ) $markup, array(
             'list_open'         => '<li %1$s id="comment-%2$s">',
+            'comment_class'     => 'wts-single-comment',
             'awaiting_approval' => '<p><em class="comment-awaiting-moderation">%s</em></p>',
             'login_to_comment'  => '<a href="%1$s">%2$s</a>',
-            'reply_to_comment'  => __( '<a href="%s">Reply</a>' ),
-            'comment_meta'      => '<div> <div><span>%1$s</span> - %3$s</div> <div><span>%2$s</span></div> </div>',
-            'edit_comment'      => __( '<p><a href="%s">Edit comment</a></p>' ),
-            'comment'           => '<p> %1$s %2$s </p>',
+            'reply_to_comment'  => __( '<a href="%s">Reply</a>', 'wts' ),
+            'comment_meta'      => __( '<div class="wts-comment-meta"><span class="wts-comment-meta-name">%1$s</span> added a comment - %3$s <br><span class="wts-comment-meta-date"><i>%2$s</i></span></div>', 'wts' ),
+            'edit_comment'      => __( '<p><a href="%s">Edit comment</a></p>', 'wts' ),
+            'comment'           => '<div class="wts-comment"> %1$s %2$s </div>',
         ) );
 
         ob_start();
 
-        printf( $markup['list_open'], comment_class( '', $comment->comment_ID, null, false ), $comment->comment_ID );
+        printf( $markup['list_open'], comment_class( $markup['comment_class'], $comment->comment_ID, null, false ), $comment->comment_ID );
 
         if ( $comment->comment_approved === '0' ) {
             printf( $markup['awaiting_approval'], esc_html__( 'Your comment is awaiting moderation.' ) );
@@ -80,7 +81,7 @@ if ( ! function_exists( 'wts_wp_list_comments_cb' ) ) {
                 'unapproved'        => false,
                 'moderation-hash'   => false,
             ), $permalink ) );
-            $replylink_html = sprintf( $markup['reply_to_comment'], $replylink );
+            $replylink_html = sprintf( $markup['reply_to_comment'], $replylink . '#respond' );
         }
 
         printf( $markup['comment_meta'], $comment->comment_author, wts_get_date( 'j M, Y', $comment->comment_date), $replylink_html );

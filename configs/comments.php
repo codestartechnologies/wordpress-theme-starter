@@ -12,6 +12,7 @@ return array(
      * Customize markups used when filtering comments lists
      */
     'comments_lists_markup' => array (
+
         /**
          * Markup for displaying a single comment opening list tag
          *
@@ -20,6 +21,13 @@ return array(
          * Default: <li %1$s id="comment-%2$s">
          */
         'list_open'         => '',
+
+        /**
+         * One or more classes to add to the class list.
+         *
+         * Default: wts-single-comment
+         */
+        'comment_class'     => '',
 
         /**
          * Markup for displaying awaiting moderation
@@ -53,7 +61,7 @@ return array(
          *
          * %1$s displays the author name, %2$s displays the date the comment was submited, %3$s displays the reply link
          *
-         * Default: <div> <div><span>%1$s</span> - %3$s</div> <div><span>%2$s</span></div> </div>
+         * Default: <div class="wts-comment-meta"><span class="wts-comment-meta-name">%1$s</span> added a comment - %3$s <br><span class="wts-comment-meta-date"><i>%2$s</i></span></div>
          */
         'comment_meta'      => '',
 
@@ -71,7 +79,7 @@ return array(
          *
          * %1$s is used for displaying the comment text, %2$s displays the edit comment link
          *
-         * Default: <p> %1$s %2$s </p>
+         * Default: <div class="wts-comment"> %1$s %2$s </div>
          */
         'comment'           => '',
 
@@ -80,28 +88,28 @@ return array(
     /**
      * Customize the opening tag markup for html element that will be added after the opening comment form tag
      *
-     * Default: <div id="wts-form-inner">
+     * Default:
      */
     'after_open_form_tag' => '',
 
     /**
      * Customize the closing tag markup for html element that will be added before the closing comment form tag
      *
-     * Default: </div>
+     * Default:
      */
     'before_close_form_tag' => '',
 
     /**
      * Customize the markup for html element that will be added after the comment form
      *
-     * Default: <br />
+     * Default: <!-- / comment form --><div class="wts-section-divider"></div>
      */
     'after_form' => '',
 
     /**
      * Customize the markup for html element that will be added before the comment form
      *
-     * Default:
+     * Default: <!-- comment form --><h4 class="wts-centered-title">Leave your comment</h4><div class="wts-heading-divider"></div>
      */
     'before_form' => '',
 
@@ -109,6 +117,7 @@ return array(
      * Customize the markup used when filtering comment form default arguments.
      */
     'form_defaults_markup'  => array(
+
         /**
          * Opening tag markup
          *
@@ -165,6 +174,7 @@ return array(
      * Customize markup for cancel comment reply link HTML
      */
     'cancel_reply_markup'  => array(
+
         /**
          * Markup for the cancel comment reply link
          *
@@ -173,6 +183,7 @@ return array(
          * Default: <a href="%1$s" %3$s>%2$s</a>
          */
         'container'  => '',
+
     ),
 
     /**
@@ -185,7 +196,7 @@ return array(
          *
          * %1$s generates the input field name, %2$s holds the value of the field
          *
-         * Default: <p><label>Fullname</label><input type="text" name="%1$s" value="%2$s" /></p><br />
+         * Default: <div class="wts-flex"><div><label for="wts_comment_form_author">Full Name *</label><input type="text" name="%1$s" id="wts_comment_form_author" value="%2$s" /></div>
          */
         'author'    => '',
 
@@ -194,16 +205,25 @@ return array(
          *
          * %1$s generates the input field name, %2$s holds the value of the field
          *
-         * Default: <p><label>Email Address</label><input type="email" name="%1$s" value="%2$s" /></p><br />
+         * Default: <div><label for="wts_comment_form_email">Email Address *</label><input type="email" name="%1$s" id="wts_comment_form_email" value="%2$s" /></div>
          */
         'email'     => '',
+
+        /**
+         * Markup to display url field
+         *
+         * %1$s generates the input field name, %2$s holds the value of the field
+         *
+         * Default: <div><label for="wts_comment_form_url">Website</label><input type="text" name="%1$s" id="wts_comment_form_url" value="%2$s" /></div></div>
+         */
+        'url'       => '',
 
         /**
          * Markup to display comment field
          *
          * %s generates the textarea field name
          *
-         * Default: <p><label>Your Comment</label><textarea name="%s"></textarea></p><br />
+         * Default: <div><label for="wts_comment_form_text">Comment *</label><textarea name="%s" id="wts_comment_form_text" cols="30" rows="10"></textarea></div>
          */
         'comment'   => '',
 
@@ -212,7 +232,7 @@ return array(
          *
          * %1$s generates the checbox field name, %2$s adds checked attribute to the field, %3$s displays the consent text
          *
-         * Default: <p><input type="checkbox" name="%1$s" value="yes" %2$s /><label>%3$s</label></p><br />
+         * Default: <div><div class="wts-flex wts-inline-form-field"><input type="checkbox" name="%1$s" id="wts_comment_form_cookie" value="yes" %2$s /><label for="wts_comment_form_cookie">%3$s</label></div></div>
          */
         'cookies'   => '',
 
@@ -222,8 +242,11 @@ return array(
      * Customize markup for filtering the submit field for the comment form to display
      */
     'submit_field_markup'   => array(
+
         /**
-         * Default: <p> %1$s %2$s </p>
+         * %1$s generates the submit button, %2$s generates hidden input HTML for replying to comments.
+         *
+         * Default: %1$s %2$s
          */
         'container' => '',
 

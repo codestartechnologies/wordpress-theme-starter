@@ -51,7 +51,6 @@
                                     comment_form();
                                 }
 
-                                get_template_part( 'template-parts/content/page-divider' );
                                 get_template_part( 'template-parts/content/post-navigation' );
 
                             }

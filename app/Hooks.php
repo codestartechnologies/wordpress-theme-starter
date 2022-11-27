@@ -372,7 +372,7 @@ if ( ! class_exists( 'Hooks' ) ) {
         public function action_comment_form_top() : void
         {
             $markup = wts_config( 'comments.after_open_form_tag' );
-            $markup = ( $markup ) ?: '<div id="wts-form-inner">';
+            $markup = ( $markup ) ?: '';
             echo $markup;
         }
 
@@ -388,7 +388,7 @@ if ( ! class_exists( 'Hooks' ) ) {
         public function action_comment_form(int $post_id) : void
         {
             $markup = wts_config( 'comments.before_close_form_tag' );
-            $markup = ( $markup ) ?: '</div>';
+            $markup = ( $markup ) ?: '';
             echo $markup;
         }
 
@@ -402,7 +402,7 @@ if ( ! class_exists( 'Hooks' ) ) {
          */
         public function action_comment_form_after() : void {
             $markup = wts_config( 'comments.after_form' );
-            $markup = ( $markup ) ?: '<br />';
+            $markup = ( $markup ) ?: '<!-- / comment form --><div class="wts-section-divider"></div>';
             echo $markup;
         }
 
@@ -416,7 +416,7 @@ if ( ! class_exists( 'Hooks' ) ) {
          */
         public function action_comment_form_before() : void {
             $markup = wts_config( 'comments.before_form' );
-            $markup = ( $markup ) ?: '';
+            $markup = ( $markup ) ?: __( '<!-- comment form --><h4 class="wts-centered-title">Leave your comment</h4><div class="wts-heading-divider"></div>', 'wts' );
             echo $markup;
         }
 
@@ -743,15 +743,18 @@ if ( ! class_exists( 'Hooks' ) ) {
 
             $markup = array_filter( ( array ) wts_config( 'comments.fields_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
-                'author'    => __( '<p><label>Fullname</label><input type="text" name="%1$s" value="%2$s" /></p><br />', 'wts' ),
-                'email'     => __( '<p><label>Email Address</label><input type="email" name="%1$s" value="%2$s" /></p><br />', 'wts' ),
-                'comment'   => __( '<p><label>Your Comment</label><textarea name="%s"></textarea></p><br />', 'wts' ),
-                'cookies'   => __( '<p><input type="checkbox" name="%1$s" value="yes" %2$s /><label>%3$s</label></p><br />', 'wts' ),
+                'author'    => __( '<div class="wts-flex"><div><label for="wts_comment_form_author">Full Name *</label><input type="text" name="%1$s" id="wts_comment_form_author" value="%2$s" /></div>', 'wts' ),
+                'email'     => __( '<div><label for="wts_comment_form_email">Email Address *</label><input type="email" name="%1$s" id="wts_comment_form_email" value="%2$s" /></div>', 'wts' ),
+                'url'       => __( '<div><label for="wts_comment_form_url">Website</label><input type="text" name="%1$s" id="wts_comment_form_url" value="%2$s" /></div></div>', 'wts' ),
+                'comment'   => __( '<div><label for="wts_comment_form_text">Comment *</label><textarea name="%s" id="wts_comment_form_text" cols="30" rows="10"></textarea></div>', 'wts' ),
+                'cookies'   => __( '<div><div class="wts-flex wts-inline-form-field"><input type="checkbox" name="%1$s" id="wts_comment_form_cookie" value="yes" %2$s /><label for="wts_comment_form_cookie">%3$s</label></div></div>', 'wts' ),
             ) );
 
             $comment_fields['author'] = sprintf( $markup['author'], 'author', esc_attr( $commenter['comment_author'] ) );
 
             $comment_fields['email'] = sprintf( $markup['email'], 'email', esc_attr( $commenter['comment_author_email'] ) );
+
+            $comment_fields['url'] = sprintf( $markup['url'], 'url', esc_attr( $commenter['comment_author_url'] ) );
 
             $comment_fields['comment'] = sprintf( $markup['comment'], 'comment' );
 
@@ -780,7 +783,7 @@ if ( ! class_exists( 'Hooks' ) ) {
         {
             $markup = array_filter( ( array ) wts_config( 'comments.submit_field_markup' ) );
             $markup = wp_parse_args( ( array ) $markup, array(
-                'container' => '<p> %1$s %2$s </p>',
+                'container' => '%1$s %2$s',
                 'button'    => __( '<button type="submit" name="%1$s" id="%2$s">Add Comment</button>', 'wts' ),
             ) );
 
