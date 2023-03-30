@@ -1,13 +1,16 @@
 <?php
 /**
- * This file contains configuration settings for registering admin menu pages
+ * This file contains configuration settings for registering admin menu pages.
  *
+ * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
  * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
- * @link        https://codestar.com.ng
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
  */
 
 return array(
+
     /**
      * Initial values to create "WTS Menu" menu page in the admin area.
      */
@@ -61,4 +64,5 @@ return array(
 
         'position'      => null,
     )
+
 );

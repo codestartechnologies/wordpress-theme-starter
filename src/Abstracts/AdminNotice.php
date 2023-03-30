@@ -6,7 +6,8 @@
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
- * @link        https://codestar.com.ng
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
  * @since       1.0.0
  */
 
@@ -21,36 +22,35 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! class_exists( 'AdminNotice' ) ) {
+/**
+ * Class Customizer
+ *
+ * This class contains contracts that will be used to register admin notifications.
+ *
+ * @package     WordpressThemeStarter
+ * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ */
+abstract class AdminNotice implements ActionHooks
+{
     /**
-     * Class Customizer
+     * Register add_action() and remove_action().
      *
-     * This class contains contracts that will be used to register admin notifications.
-     *
-     * @package WordpressThemeStarter
-     * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
+     * @access public
+     * @return void
+     * @since 1.0.0
      */
-    abstract class AdminNotice implements ActionHooks {
-        /**
-         * Register add_action() and remove_action().
-         *
-         * @access public
-         * @return void
-         * @since 1.0.0
-         */
-        public function register_actions(): void
-        {
-            add_action( 'admin_notices', array( $this, 'notification' ) );
-        }
-
-        /**
-         * "admin_notices" action hook callback
-         *
-         * @access public
-         * @abstract
-         * @return void
-         * @since 1.0.0
-         */
-        abstract public function notification() : void;
+    public function register_actions() : void
+    {
+        add_action( 'admin_notices', array( $this, 'notification' ) );
     }
+
+    /**
+     * "admin_notices" action hook callback
+     *
+     * @abstract
+     * @access public
+     * @return void
+     * @since 1.0.0
+     */
+    abstract public function notification() : void;
 }

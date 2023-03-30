@@ -2,12 +2,15 @@
 /**
  * This file contains configuration settings for registering settings, adding settings sections and fields
  *
+ * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
  * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
- * @link        https://codestar.com.ng
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
  */
 
 return array(
+
     /**
      * Initial values to create 'WordPress Theme Starter Sidebar' settings.
      */
@@ -38,6 +41,7 @@ return array(
         ),
 
         'fields'    => array(
+
             array(
 
                 'id'            => 'show_sidebar',
@@ -48,6 +52,7 @@ return array(
 
                 'setting_key'   => 'sidebar_page',
             ),
+
             array(
 
                 'id'            => 'default_page',
@@ -58,6 +63,9 @@ return array(
 
                 'setting_key'   => 'sidebar_page',
             ),
+
         ),
+
     ),
+
 );

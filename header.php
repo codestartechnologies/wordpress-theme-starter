@@ -2,6 +2,11 @@
 /**
  * The header template file in WordPress theme
  *
+ * @package     WordpressThemeStarter
+ * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
  */
 ?>
 
@@ -43,15 +48,18 @@
         <!-- / mobile top bar -->
 
         <?php if ( has_nav_menu( 'wts_mobile_menu' ) ) : ?>
+
         <!-- mobile nav menu -->
         <div class="wts-menu-container wts-mobile-menu-container">
             <?php wp_nav_menu( array( 'theme_location'  => 'wts_mobile_menu', ) ); ?>
         </div>
         <!-- / mobile nav menu -->
+
         <?php endif; ?>
 
         <div class="wts-container">
             <div class="wts-row">
+
                 <!-- desktop top bar -->
                 <div class="wts-desktop-top-bar">
                     <a href="<?php echo site_url(); ?>" class="wts-logo">
@@ -59,11 +67,14 @@
                     </a>
                 </div>
                 <!-- / desktop top bar -->
+
                 <!-- desktop nav menu -->
                 <div class="wts-menu-container wts-desktop-menu-container">
+
                     <?php if ( has_nav_menu( 'wts_pc_menu' ) ) : ?>
                         <?php wp_nav_menu( array( 'theme_location'  => 'wts_pc_menu', ) ); ?>
                     <?php endif; ?>
+
                     <!-- search form -->
                     <div class="wts-menu-search-form">
                         <form action="<?php echo get_search_link( 's' ); ?>" method="get" class="wts-flex">
@@ -74,8 +85,11 @@
                         </form>
                     </div>
                     <!-- / search form -->
+
                 </div>
                 <!-- / desktop nav menu -->
+
             </div>
         </div>
+
     </header>

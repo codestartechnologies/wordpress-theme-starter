@@ -1,7 +1,22 @@
+<?php
+/**
+ * This file is used to display comments list.
+ *
+ * @package     WordpressThemeStarter
+ * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
+ */
+?>
+
 <!-- comments list -->
 <h4 class="wts-centered-title">5 thoughts on this post</h4>
+
 <div class="wts-heading-divider"></div>
+
 <ul class="wts-comments">
+
     <li class="wts-single-comment">
         <div class="wts-comment-meta">
             <span class="wts-comment-meta-name">Chijindu Nzeako</span> added a comment - <a href="">Reply</a> <br>
@@ -13,6 +28,7 @@
             magni dolorum?
         </div>
     </li>
+
     <li class="wts-single-comment">
         <div class="wts-comment-meta">
             <span class="wts-comment-meta-name">Kate</span> added a comment - <a href="">Reply</a> <br>
@@ -23,6 +39,7 @@
             debitis? Magni, harum a veniam, accusamus excepturi ab earum commodi eaque beatae est quis cumque aliquam!
         </div>
     </li>
+
     <li class="wts-single-comment">
         <div class="wts-comment-meta">
             <span class="wts-comment-meta-name">Kenneth Roah</span> added a comment - <a href="">Reply</a> <br>
@@ -46,6 +63,7 @@
             </li>
         </ul>
     </li>
+
     <li class="wts-single-comment">
         <div class="wts-comment-meta">
             <span class="wts-comment-meta-name">Donnie Peters</span> added a comment - <a href="">Reply</a> <br>
@@ -56,6 +74,7 @@
             iusto magnam placeat similique natus molestias tempora numquam, pariatur unde sed id incidunt libero a?
         </div>
     </li>
+
 </ul>
 <!-- / comments list -->
 

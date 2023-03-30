@@ -7,7 +7,8 @@
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
- * @link        https://codestar.com.ng
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
  * @since       1.0.0
  */
 
@@ -20,23 +21,21 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-if ( ! interface_exists( 'FilterHooks' ) ) {
+/**
+ * Interface FilterHooks
+ *
+ * Classes that make use of add_filter() and remove_filter() need to implement this interface.
+ *
+ * @package     WordpressThemeStarter
+ * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ */
+interface FilterHooks {
     /**
-     * Interface FilterHooks
+     * Register add_filter() and remove_filter().
      *
-     * Classes that make use of add_filter() and remove_filter() need to implement this interface.
-     *
-     * @package WordpressThemeStarter
-     * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
+     * @access public
+     * @return void
+     * @since 1.0.0
      */
-    interface FilterHooks {
-        /**
-         * Register add_filter() and remove_filter().
-         *
-         * @access public
-         * @return void
-         * @since 1.0.0
-         */
-        public function register_filters() : void;
-    }
+    public function register_filters() : void;
 }

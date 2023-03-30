@@ -6,10 +6,10 @@
  * that you want to use it in your WordPress theme, are inside in this file.
  *
  * @package    WordpressThemeStarter
- * @version    1.0.0
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
  * @license    https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
- * @link       https://codestar.com.ng
+ * @link       https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since      1.0.0
  */
 
 use Codestartechnologies\WordpressThemeStarter\Core\Constants as CoreConstants;
@@ -31,9 +31,10 @@ if ( ! defined( 'ABSPATH' ) ) {
  * This class is primary file of theme which is used from singleton design pattern.
  *
  * @package WordpressThemeStarter
- * @author Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
-final class WTSTheme {
+final class WTSTheme
+{
     /**
      * Instance property of Rome class.
      *
@@ -82,7 +83,6 @@ final class WTSTheme {
          * Define theme constants
          */
         Constants::define_constants();
-
     }
 
     /**
@@ -137,6 +137,7 @@ final class WTSTheme {
      *
      * @param array $classes
      * @return array
+     * @since 1.0.0
      */
     private static function boot( array $classes = array() ) : array
     {
@@ -158,6 +159,7 @@ final class WTSTheme {
      *
      * @param array $classes
      * @return array
+     * @since 1.0.0
      */
     private static function boot_with_configs( array $classes = array() ) : array
     {

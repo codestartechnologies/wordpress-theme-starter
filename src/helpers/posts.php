@@ -2,9 +2,11 @@
 /**
  * This file contains functions for interacting with posts.
  *
+ * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
  * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
- * @link        https://codestar.com.ng
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
  */
 
 if ( ! function_exists( 'wts_is_even_number' ) ) {
@@ -58,13 +60,7 @@ if ( ! function_exists( 'wts_get_posts_by_meta_key_value' ) ) {
      * @return array
      * @since 1.0.0
      */
-    function wts_get_posts_by_key_value(
-        string $post_type,
-        string $meta_key,
-        mixed $meta_value,
-        int $numberposts = 10,
-        string $orderby = 'rand'
-    ) : array
+    function wts_get_posts_by_key_value( string $post_type, string $meta_key, mixed $meta_value, int $numberposts = 10, string $orderby = 'rand' ) : array
     {
         return get_posts( array(
             'numberposts'   => $numberposts,
@@ -92,13 +88,7 @@ if ( ! function_exists( 'wts_get_related_posts' ) ) {
      * @return array
      * @since 1.0.0
      */
-    function wts_get_related_posts(
-        int $post_id,
-        string $post_type,
-        string $taxonomy,
-        int $numberposts = 10,
-        string $orderby = 'rand'
-    ) : array
+    function wts_get_related_posts( int $post_id, string $post_type, string $taxonomy, int $numberposts = 10, string $orderby = 'rand' ) : array
     {
         $terms = wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'slugs' ) );
         $terms_arr = ( ! is_wp_error( $terms ) ) ? $terms : array();

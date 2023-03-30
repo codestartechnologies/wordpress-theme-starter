@@ -1,6 +1,20 @@
+<?php
+/**
+ * This file is used to display a comment form.
+ *
+ * @package     WordpressThemeStarter
+ * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
+ */
+?>
+
 <!-- comment form -->
 <h4 class="wts-centered-title">Leave your comment</h4>
+
 <div class="wts-heading-divider"></div>
+
 <form action="" method="post">
     <div class="wts-flex">
         <div>

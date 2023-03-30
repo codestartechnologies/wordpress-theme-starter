@@ -2,6 +2,11 @@
 /**
  * The comments template file in WordPress theme
  *
+ * @package     WordpressThemeStarter
+ * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
  */
 
 $comments_title = sprintf(
@@ -11,12 +16,13 @@ $comments_title = sprintf(
 
 ?>
 
-<!-- comments list -->
 <h4 class="wts-centered-title"> <?php echo $comments_title; ?> </h4>
+
 <div class="wts-heading-divider"></div>
 
 <?php if ( comments_open() || get_comments_number() ) : ?>
 
+<!-- comments list -->
 <ul class="wts-comments">
     <?php wp_list_comments(); ?>
 </ul>

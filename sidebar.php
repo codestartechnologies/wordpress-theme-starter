@@ -1,7 +1,19 @@
+<?php
+/**
+ * The template file to display a separate sidebar section in WordPress.
+ *
+ * @package     WordpressThemeStarter
+ * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @license     https://www.gnu.org/licenses/agpl-3.0.txt GNU/AGPLv3
+ * @link        https://github.com/codestartechnologies/wordpress-theme-starter
+ * @since       1.0.0
+ */
+?>
+
 <!-- sidebar -->
 <aside class="wts-sidebar">
-    <?php
 
+    <?php
         $default_page_id = get_option( 'wts_sidebar_page' )['default_page'] ?? null;
         $sidebar_active = get_option( 'wts_sidebar_page' )['show_sidebar'] ?? null;
 
@@ -20,7 +32,7 @@
                 );
             }
         }
-
     ?>
+
 </aside>
 <!-- / sidebar -->
