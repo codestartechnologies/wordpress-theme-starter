@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains general helper functions used in creating your theme
+ * This file contains general helper functions for the project.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -11,9 +11,9 @@
 
 if ( ! function_exists( 'wts_config' ) ) {
     /**
-     * Gets a configuration setting
+     * Gets a configuration setting from a config file.
      *
-     * @param string $name  The name of the config file concatenated by the config key
+     * @param string $name  The name of the config file concatenated by the config key. Example `views.error_messages`
      * @return mixed
      * @since 1.0.0
      */
@@ -33,6 +33,62 @@ if ( ! function_exists( 'wts_config' ) ) {
         }
 
         return null;
+    }
+}
+
+if ( ! function_exists( 'wts_include_file') ) {
+    /**
+     * Includes a file.
+     *
+     * @param string $file_path     The relative path to the file without an extension name. Paths can be separated with dots.
+     * @param array $args           An array of arguements that will be passed to the file
+     * @return void
+     * @since 1.0.0
+     */
+    function wts_include_file( string $file_path, array $args = array() ) : void
+    {
+        $file_path = str_replace( '.', '/', $file_path );
+        $path_to_file = $file_path . '.php';
+
+        if ( is_file( $path_to_file ) ) {
+
+            if ( ! empty( $args ) ) {
+                extract( $args );
+            }
+
+            require_once $path_to_file;
+        }
+    }
+}
+
+if ( ! function_exists( 'wts_get_date' ) ) {
+    /**
+     * Returns a date in a custom format.
+     *
+     * @param string $format
+     * @param string $date
+     * @return string|null
+     * @since 1.0.0
+     */
+    function wts_get_date( string $format = 'd m Y', string $date = 'now' ) : string|null
+    {
+        return date( $format, strtotime( $date ) );
+    }
+}
+
+if ( ! function_exists( 'wts_is_plugin_active' ) ) {
+    /**
+     * Checks if a plugin is installed and activated.
+     *
+     * @param string $dir_name      The plugin directory name
+     * @param string $file_name     The plugin file name
+     * @return boolean
+     * @since 1.0.0
+     */
+    function wts_is_plugin_active( string $dir_name, string $file_name ) : bool
+    {
+        $dir = trailingslashit( $dir_name );
+        return in_array( $dir . $file_name, apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) );
     }
 }
 
@@ -97,98 +153,5 @@ if ( ! function_exists( 'wts_wp_list_comments_cb' ) ) {
         printf( $markup['comment'], wp_kses_post( $comment->comment_content ), $edit_link );
 
         echo ob_get_clean();
-    }
-}
-
-if ( ! function_exists( 'wts_include_file') ) {
-    /**
-     * Includes a file, and passes arguements to the file
-     *
-     * @param string $file_path     The relative path to the file without an extension name. Paths can be separated with dots.
-     * @param array $args           An array of arguements that will be passed to the file
-     * @return void
-     * @since 1.0.0
-     */
-    function wts_include_file( string $file_path, array $args = array() ) : void
-    {
-        $file_path = str_replace( '.', '/', $file_path );
-        $path_to_file = $file_path . '.php';
-
-        if ( is_file( $path_to_file ) ) {
-
-            if ( ! empty( $args ) ) {
-                extract( $args );
-            }
-
-            require_once $path_to_file;
-        }
-    }
-}
-
-if ( ! function_exists( 'wts_get_social_link' ) ) {
-    /**
-     * Generates a url link to a social handle page or user account
-     *
-     * @param string $handle    The social handle username. example @page. Can also be a full url to the social handle when $type is set to null
-     * @param string $type      Supported type: twitter, facebook, instagram, youtube, and whatsapp.
-     * @return string
-     * @since 1.0.0
-     */
-    function wts_get_social_link( string $handle, string $type = null  ) : string
-    {
-        $clean_handle = str_replace( array( '@', 'http://', 'https://', 'www.' ), '', $handle );
-
-        switch ( $type ) {
-            case 'facebook':
-                $url = "https://www.facebook.com/{$clean_handle}";
-                break;
-            case 'twitter':
-                $url = "https://twitter.com/{$clean_handle}";
-                break;
-            case 'instagram':
-                $url = "https://instagram.com/{$clean_handle}";
-                break;
-            case 'youtube':
-                $url = "https://www.youtube.com/c/{$clean_handle}";
-                break;
-            case 'whatsapp':
-                $url = "https://api.whatsapp.com/send?phone={$clean_handle}";
-                break;
-            default :
-                $url = esc_url( $handle );
-        }
-
-        return $url;
-    }
-}
-
-if ( ! function_exists( 'wts_get_date' ) ) {
-    /**
-     * Returns a date in custom format
-     *
-     * @param string $format
-     * @param string $date
-     * @return string|null
-     * @since 1.0.0
-     */
-    function wts_get_date( string $format = 'd m Y', string $date = 'now' ) : string|null
-    {
-        return date( $format, strtotime( $date ) );
-    }
-}
-
-if ( ! function_exists( 'wts_is_plugin_active' ) ) {
-    /**
-     * Checks if a plugin is installed and activated
-     *
-     * @param string $dir_name      The plugin directory name
-     * @param string $file_name     The plugin file name
-     * @return boolean
-     * @since 1.0.0
-     */
-    function wts_is_plugin_active( string $dir_name, string $file_name ) : bool
-    {
-        $dir = trailingslashit( $dir_name );
-        return in_array( $dir . $file_name, apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) );
     }
 }

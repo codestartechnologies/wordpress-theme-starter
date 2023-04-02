@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains functions for creating pagination for archives
+ * This file contains functions for creating pagination links for archive pages.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -11,7 +11,7 @@
 
 if ( ! function_exists( 'wts_paginate' ) ) {
     /**
-     * Creates pagination links for an archive page
+     * Displays advanced pagination links for an archive.
      *
      * @param integer|null $pages
      * @param integer $range
@@ -86,7 +86,7 @@ if ( ! function_exists( 'wts_paginate' ) ) {
 
 if ( ! function_exists( 'wts_simple_paginate' ) ) {
     /**
-     * Creates a simple pagination links for archive pages
+     * Displays "Next page" and "Previous page" pagination links for an archive.
      *
      * @return void
      * @since 1.0.0

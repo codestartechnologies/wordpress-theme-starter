@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains functions for interacting with posts.
+ * This file contains functions for interacting with post types.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -8,20 +8,6 @@
  * @link        https://github.com/codestartechnologies/wordpress-theme-starter
  * @since       1.0.0
  */
-
-if ( ! function_exists( 'wts_is_even_number' ) ) {
-    /**
-     * Used to determine an even number
-     *
-     * @param integer $number
-     * @return boolean
-     * @since 1.0.0
-     */
-    function wts_is_even_number( int $number ) : bool
-    {
-        return ( ( $number % 2 ) === 0 ) ? true : false;
-    }
-}
 
 if ( ! function_exists( 'wts_get_the_excerpt' ) ) {
     /**
@@ -35,22 +21,18 @@ if ( ! function_exists( 'wts_get_the_excerpt' ) ) {
     function wts_get_the_excerpt( \WP_Post $post = null, int $num_words = 55 ) : string
     {
         if ( is_null( $post ) ) {
-            $excerpt = ( has_excerpt() )
-                ? get_the_excerpt()
-                : sanitize_textarea_field( strip_shortcodes( get_the_content() ) );
+            $excerpt = ( has_excerpt() ) ? get_the_excerpt() : strip_shortcodes( get_the_content() );
         } else {
-            $excerpt = ( ! empty( $post->post_excerpt ) )
-                ? $post->post_excerpt
-                : sanitize_textarea_field( strip_shortcodes( $post->post_content ) );
+            $excerpt = ( ! empty( $post->post_excerpt ) ) ? $post->post_excerpt : strip_shortcodes( $post->post_content );
         }
 
-        return wp_trim_words( $excerpt, $num_words );
+        return wp_trim_words( sanitize_textarea_field( $excerpt ), $num_words );
     }
 }
 
-if ( ! function_exists( 'wts_get_posts_by_meta_key_value' ) ) {
+if ( ! function_exists( 'wts_get_posts_by_meta_value' ) ) {
     /**
-     * Gets posts by meta_query
+     * Gets posts by their meta value
      *
      * @param string $post_type     The post type
      * @param string $meta_key      The value for 'key' specified in meta_query arguement
@@ -60,7 +42,7 @@ if ( ! function_exists( 'wts_get_posts_by_meta_key_value' ) ) {
      * @return array
      * @since 1.0.0
      */
-    function wts_get_posts_by_key_value( string $post_type, string $meta_key, mixed $meta_value, int $numberposts = 10, string $orderby = 'rand' ) : array
+    function wts_get_posts_by_meta_value( string $post_type, string $meta_key, mixed $meta_value, int $numberposts = 10, string $orderby = 'rand' ) : array
     {
         return get_posts( array(
             'numberposts'   => $numberposts,
@@ -76,7 +58,7 @@ if ( ! function_exists( 'wts_get_posts_by_meta_key_value' ) ) {
     }
 }
 
-if ( ! function_exists( 'wts_get_related_posts' ) ) {
+if ( ! function_exists( 'wts_get_related_posts_by_taxonomy' ) ) {
     /**
      * Gets post that are related by a taxonomy
      *
@@ -88,7 +70,7 @@ if ( ! function_exists( 'wts_get_related_posts' ) ) {
      * @return array
      * @since 1.0.0
      */
-    function wts_get_related_posts( int $post_id, string $post_type, string $taxonomy, int $numberposts = 10, string $orderby = 'rand' ) : array
+    function wts_get_related_posts_by_taxonomy( int $post_id, string $post_type, string $taxonomy, int $numberposts = 10, string $orderby = 'rand' ) : array
     {
         $terms = wp_get_post_terms( $post_id, $taxonomy, array( 'fields' => 'slugs' ) );
         $terms_arr = ( ! is_wp_error( $terms ) ) ? $terms : array();
