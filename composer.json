@@ -4,12 +4,13 @@
     "type": "project",
     "keywords": [
         "wordpress",
+        "boilerplate",
         "wordpress theme boilerplate",
         "boilerplate for wordpress theme",
-        "wordpress theme generator",
+        "wordpress theme",
         "wts",
-        "wordpress theme starter",
-        "wordpress theme builder"
+        "starter template",
+        "wordpress starter template"
     ],
     "readme": "README.MD",
     "license": "AGPL-3.0-or-later",
@@ -33,5 +34,7 @@
     "support": {
         "email": "codestartechng@gmail.com"
     },
-    "require": {}
+    "require": {
+        "vlucas/phpdotenv": "^5.5"
+    }
 }

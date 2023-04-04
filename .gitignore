@@ -22,4 +22,8 @@ node_modules/
 *.sql
 *.sqlite
 
-!vendor/
+# ignore composer.lock
+composer.lock
+
+# ignore .env
+.env

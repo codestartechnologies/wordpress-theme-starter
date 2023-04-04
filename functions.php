@@ -1,9 +1,9 @@
 <?php
 /**
- * The main template that your theme works with it.
+ * This file is where unique features are added to your WordPress theme.
  *
- * This file is like a plugin for your template. All of functions and classes
- * that you want to use it in your WordPress theme, are inside in this file.
+ * This file behaves like a WordPress plugin, adding features and functionality to a WordPress site. It contains WTSTheme class which is used
+ * to set up your theme.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -14,6 +14,7 @@
 
 use Codestartechnologies\WordpressThemeStarter\Core\Constants as CoreConstants;
 use Codestartechnologies\WordpressThemeStarter\Core\Bootstrap;
+use Dotenv\Dotenv;
 use WTS_Theme\App\Bindings;
 use WTS_Theme\App\Constants;
 use WTS_Theme\App\Hooks;
@@ -26,9 +27,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class WTSTheme
+ * WTSTheme class
  *
- * This class is primary file of theme which is used from singleton design pattern.
+ * Main class used in setting up your theme. This class is designed from a singleton design pattern.
  *
  * @package WordpressThemeStarter
  * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -36,10 +37,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class WTSTheme
 {
     /**
-     * Instance property of Rome class.
+     * Instance property of WTSTheme class
      *
-     * This property will be used to create one object from Rome class in the whole of
-     * program execution
+     * This property will be used to create one object from WTSTheme class in the whole of program execution.
      *
      * @access private
      * @static
@@ -51,6 +51,8 @@ final class WTSTheme
     /**
      * Object containing core functionalities of the theme.
      *
+     * It is the main class that will manage and handle all the tasks required by your theme.
+     *
      * @access private
      * @var Bootstrap
      * @since 1.0.0
@@ -60,7 +62,7 @@ final class WTSTheme
     /**
      * WTSTheme constructor
      *
-     * Defines related constants, include autoloader class for this theme.
+     * It include autoloader class files, and defines related constants for the theme.
      *
      * @access private
      * @return void
@@ -68,20 +70,20 @@ final class WTSTheme
      */
     private function __construct()
     {
-        /**
-         * Include autoloader class that will load required classes for this theme.
-         */
+        // Require composer autoloader file
         require_once get_template_directory() . '/vendor/autoload.php';
+
+        // Require project autoloader file
         require_once get_template_directory() . '/autoload.php';
 
-        /**
-         * Define core constants
-         */
+        // Load .env inside the application
+        $dotenv = Dotenv::createImmutable( __DIR__ );
+        $dotenv->safeLoad();
+
+        // Define project core constants
         CoreConstants::define_core_constants();
 
-        /**
-         * Define theme constants
-         */
+        // Define user constants
         Constants::define_constants();
     }
 
@@ -90,16 +92,13 @@ final class WTSTheme
      *
      * Creates an instance from WTSTheme class
      *
-     * @access public
      * @static
      * @return WTSTheme
      * @since 1.0.0
      */
     public static function instance() : WTSTheme
     {
-        /**
-         * Check for an existing instance and return instance
-         */
+        // Check for an existing instance and return the instance
         if ( ! isset( self::$instance ) ) {
             self::$instance = new self();
         }
@@ -109,6 +108,8 @@ final class WTSTheme
 
     /**
      * Initialize the theme with dependency injections.
+     *
+     * Calls Bootstrap class to run dependencies for the theme.
      *
      * @access public
      * @return void

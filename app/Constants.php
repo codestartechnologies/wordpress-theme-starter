@@ -2,7 +2,7 @@
 /**
  * Constants class file.
  *
- * This file contains Constants class which defines needed constants that will be used in your theme development.
+ * This file contains Constants class which defines needed constants to ease your theme development processes.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -23,30 +23,43 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Constants Class
  *
- * @package     WordpressThemeStarter
- * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * This class defines needed constants to ease your theme development processes.
+ *
+ * @package WordpressThemeStarter
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
 final class Constants
 {
     /**
      * Define core constants.
      *
+     * @static
      * @return void
      * @since 1.0.0
      */
     public static function define_constants() : void
     {
-        /**
-         * Specify theme version
-         */
+        // Theme Name
+        if ( ! defined( 'THEME_NAME' ) ) {
+            define( 'THEME_NAME', $_ENV['THEME_NAME'] ?? 'YOUR_THEME_NAME' );
+        }
 
+        // Theme Version
+        if ( ! defined( 'THEME_VERSION' ) ) {
+            define( 'THEME_VERSION', $_ENV['THEME_VERSION'] ?? 'YOUR_THEME_VERSION' );
+        }
+
+        // Theme Author
+        if ( ! defined( 'THEME_AUTHOR' ) ) {
+            define( 'THEME_AUTHOR', $_ENV['THEME_AUTHOR'] ?? 'YOUR_THEME_AUTHOR' );
+        }
+
+        // Theme version
         if ( ! defined( 'WTS_THEME_VERSION' ) ) {
             define( 'WTS_THEME_VERSION', '0.1.0' );
         }
 
-        /**
-         * Define links to wts-template CSS files
-         */
+        // Links to CSS and JS files used in the front-end
 
         if ( ! defined( 'WTS_TEMPLATE_CSS' ) ) {
             define( 'WTS_TEMPLATE_CSS', WTS_CSS_URI . 'style.css' );
@@ -56,17 +69,11 @@ final class Constants
             define( 'WTS_TEMPLATE_RESPONSIVE_CSS', WTS_CSS_URI . 'responsive.css' );
         }
 
-        /**
-         * Define links to wts-template JS files
-         */
-
         if ( ! defined( 'WTS_TEMPLATE_JS' ) ) {
             define( 'WTS_TEMPLATE_JS', WTS_JS_URI . 'script.js' );
         }
 
-        /**
-         * Define links to wts-template Image files
-         */
+        // Links to Image files used at the front-end
 
         if ( ! defined( 'WTS_LOGO_IMG' ) ) {
             define( 'WTS_LOGO_IMG', WTS_IMG_URI . 'logo.png' );
@@ -81,7 +88,8 @@ final class Constants
         }
 
         /**
-         * Define constants needed by your theme below
+         * Define constants your custom constants below. It is recommended you check for existence of a constant before defining it.
          */
+
     }
 }
