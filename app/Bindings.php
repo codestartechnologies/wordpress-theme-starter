@@ -17,7 +17,7 @@ use WTS_Theme\App\Admin\Customizers\WTSCustomizer;
 use WTS_Theme\App\Admin\Menus\WTSMenuPage;
 use WTS_Theme\App\Admin\Menus\WTSOptionsPage;
 use WTS_Theme\App\Admin\Menus\WTSThemePage;
-use WTS_Theme\App\Admin\Notices\WTSAdminNotice;
+use WTS_Theme\App\Admin\Notices\WTSNotice;
 use WTS_Theme\App\Admin\Settings\WTSSettings;
 use WTS_Theme\App\Public\Sidebars\WTSSidebar;
 
@@ -137,12 +137,17 @@ final class Bindings
     /**
      * Bindings for classes that create admin notices
      *
-     * @static
      * @access public
+     * @static
      * @var array
      * @since 1.0.0
      */
     public static array $admin_notices = array(
-        WTSAdminNotice::class,
+
+        /**
+         * Un-comment the line below in order to display a custom notification message on the screen.
+         */
+        WTSNotice::class,
+
     );
 }

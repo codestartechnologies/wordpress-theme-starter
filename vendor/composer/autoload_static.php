@@ -28,19 +28,6 @@ class ComposerStaticInit1544251c497eeb8d2de05de0755efd22
     );
 
     public static $classMap = array (
-        'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\AdminNotice' => __DIR__ . '/../..' . '/src/Abstracts/AdminNotice.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\Customizer' => __DIR__ . '/../..' . '/src/Abstracts/Customizer.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\MenuPage' => __DIR__ . '/../..' . '/src/Abstracts/MenuPage.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\OptionsPage' => __DIR__ . '/../..' . '/src/Abstracts/OptionsPage.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\Settings' => __DIR__ . '/../..' . '/src/Abstracts/Settings.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\Sidebar' => __DIR__ . '/../..' . '/src/Abstracts/Sidebar.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Abstracts\\ThemePage' => __DIR__ . '/../..' . '/src/Abstracts/ThemePage.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Core\\Bootstrap' => __DIR__ . '/../..' . '/src/Core/Bootstrap.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Core\\Constants' => __DIR__ . '/../..' . '/src/Core/Constants.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\ActionHooks' => __DIR__ . '/../..' . '/src/Interfaces/ActionHooks.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Interfaces\\FilterHooks' => __DIR__ . '/../..' . '/src/Interfaces/FilterHooks.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Traits\\Validator' => __DIR__ . '/../..' . '/src/Traits/Validator.php',
-        'Codestartechnologies\\WordpressThemeStarter\\Traits\\ViewLoader' => __DIR__ . '/../..' . '/src/Traits/ViewLoader.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
     );
 
