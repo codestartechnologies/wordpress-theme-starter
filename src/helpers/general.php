@@ -92,6 +92,25 @@ if ( ! function_exists( 'wts_is_plugin_active' ) ) {
     }
 }
 
+if ( ! function_exists( 'wts_log' ) ) {
+    /**
+     * Function for logging message to a file.
+     *
+     * @param string $log_message   Log Message.
+     * @param string $path          Path to the log file.
+     * @return void
+     * @since 1.0.0
+     */
+    function wts_log( string $log_message, string $path ) : void
+    {
+        if ( ! error_log( $log_message . PHP_EOL, 3, $path ) ) {
+            $resource = fopen( $path, 'a' );
+            fwrite( $resource, $log_message . PHP_EOL );
+            fclose( $resource );
+        }
+    }
+}
+
 if ( ! function_exists( 'wts_wp_list_comments_cb' ) ) {
     /**
      * Filters the arguments used in retrieving the comment list.

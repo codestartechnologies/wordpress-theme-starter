@@ -111,5 +111,12 @@ final class Constants
         if ( ! defined( 'WTS_LANGUAGES_DIR' ) ) {
             define( 'WTS_LANGUAGES_DIR', trailingslashit( WTS_PATH . 'languages/' ) );
         }
+
+        /**
+         * Theme logs directory
+         */
+        if ( ! defined( 'WTS_LOGS_PATH' ) ) {
+            define( 'WTS_LOGS_PATH', trailingslashit( WTS_PATH . 'logs' ) );
+        }
     }
 }
