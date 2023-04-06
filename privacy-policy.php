@@ -1,6 +1,6 @@
 <?php
 /**
- * The privacy policy page template file in WordPress theme
+ * The privacy policy page template. Used for the Privacy Policy page set in the Change your Privacy Policy page section of Settings → Privacy.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

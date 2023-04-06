@@ -1,6 +1,7 @@
 <?php
 /**
- * The archive template file in WordPress theme
+ * The archive template. Used when visitors request posts by category, author, or date.
+ * Note: this template will be overridden if more specific templates are present like category.php, author.php, and date.php.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

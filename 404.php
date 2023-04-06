@@ -1,6 +1,6 @@
 <?php
 /**
- * The 404 template file in WordPress theme
+ * The 404 template. Used when WordPress cannot find a post, page, or other content that matches the visitor’s request.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

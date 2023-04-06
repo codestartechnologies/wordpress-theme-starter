@@ -1,6 +1,6 @@
 <?php
 /**
- * The index template file in WordPress theme
+ * The main template file. It is required in all themes.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

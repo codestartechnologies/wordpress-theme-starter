@@ -1,6 +1,6 @@
 <?php
 /**
- * The taxonomy template file in WordPress theme
+ * The taxonomy term template. Used when a visitor requests a term in a custom taxonomy.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

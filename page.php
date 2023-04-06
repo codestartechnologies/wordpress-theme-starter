@@ -1,6 +1,6 @@
 <?php
 /**
- * The page template file in WordPress theme
+ * The page template. Used when visitors request individual pages, which are a built-in template.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

@@ -1,6 +1,6 @@
 <?php
 /**
- * The search results template file in WordPress theme
+ * The search results template. Used to display a visitor’s search results.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

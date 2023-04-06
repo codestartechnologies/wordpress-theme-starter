@@ -1,6 +1,6 @@
 <?php
 /**
- * The comments template file in WordPress theme
+ * The comments template. This is a partial template that is pulled into other template files to display comments that users leave on a page or post.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -9,25 +9,4 @@
  * @since       1.0.0
  */
 
-$comments_title = sprintf(
-    _nx( 'One thought on this post', '%s thoughts on this post', get_comments_number(), 'comments title', 'wts' ),
-    number_format_i18n( get_comments_number() )
-);
-
-?>
-
-<h4 class="wts-centered-title"> <?php echo $comments_title; ?> </h4>
-
-<div class="wts-heading-divider"></div>
-
-<?php if ( comments_open() || get_comments_number() ) : ?>
-
-<!-- comments list -->
-<ul class="wts-comments">
-    <?php wp_list_comments(); ?>
-</ul>
-<!-- / comments list -->
-
-<div class="wts-section-divider"></div>
-
-<?php endif; ?>
+get_template_part( 'template-parts/content/comments' );

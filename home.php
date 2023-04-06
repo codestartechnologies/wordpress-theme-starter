@@ -1,6 +1,7 @@
 <?php
 /**
- * The home template file in WordPress theme
+ * The home page template. It is the front page by default.
+ * If you do not set WordPress to use a static front page, this template is used to show latest posts.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

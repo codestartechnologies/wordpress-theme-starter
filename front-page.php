@@ -1,6 +1,6 @@
 <?php
 /**
- * The front page template file in WordPress theme
+ * The front page template. Used as the site front page if it exists, regardless of what settings on Admin > Settings > Reading.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

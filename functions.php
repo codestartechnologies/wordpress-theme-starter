@@ -12,8 +12,11 @@
  * @since      1.0.0
  */
 
+namespace Codestartechnologies\WordpressThemeStarter;
+
 use Codestartechnologies\WordpressThemeStarter\Core\Constants as CoreConstants;
 use Codestartechnologies\WordpressThemeStarter\Core\Bootstrap;
+use Codestartechnologies\WordpressThemeStarter\Helpers\Arrays;
 use Dotenv\Dotenv;
 use WTS_Theme\App\Bindings;
 use WTS_Theme\App\Constants;
@@ -71,10 +74,10 @@ final class WTSTheme
     private function __construct()
     {
         // Require composer autoloader file
-        require_once get_template_directory() . '/vendor/autoload.php';
+        require_once trailingslashit( get_template_directory() ) . 'vendor/autoload.php';
 
         // Require project autoloader file
-        require_once get_template_directory() . '/autoload.php';
+        require_once trailingslashit( get_template_directory() ) . 'autoload.php';
 
         // Load .env inside the application
         $dotenv = Dotenv::createImmutable( __DIR__ );
@@ -119,64 +122,20 @@ final class WTSTheme
     {
         $this->bootstrap = new Bootstrap(
             new Hooks(),
-            self::boot_with_configs( Bindings::$menus ),
-            self::boot_with_configs( Bindings::$themes_menus ),
-            self::boot_with_configs( Bindings::$setting_menus ),
-            self::boot_with_configs( Bindings::$sidebars ),
-            self::boot( Bindings::$unregistered_widgets ),
-            self::boot( Bindings::$widgets ),
-            self::boot_with_configs( Bindings::$customizers ),
-            self::boot_with_configs( Bindings::$settings ),
-            self::boot( Bindings::$admin_notices )
+            Arrays::create_objects_with_config( Bindings::$menus ),
+            Arrays::create_objects_with_config( Bindings::$themes_menus ),
+            Arrays::create_objects_with_config( Bindings::$setting_menus ),
+            Arrays::create_objects_with_config( Bindings::$sidebars ),
+            Arrays::create_objects( Bindings::$unregistered_widgets ),
+            Arrays::create_objects( Bindings::$widgets ),
+            Arrays::create_objects_with_config( Bindings::$customizers ),
+            Arrays::create_objects_with_config( Bindings::$settings ),
+            Arrays::create_objects( Bindings::$admin_notices )
         );
 
         $this->bootstrap->setup();
     }
-
-    /**
-     * Initialize classes.
-     *
-     * @param array $classes
-     * @return array
-     * @since 1.0.0
-     */
-    private static function boot( array $classes = array() ) : array
-    {
-        $objects_array = array();
-
-        if ( ! empty( $classes ) ) {
-            foreach ( $classes as $class ) {
-                if ( class_exists( $class ) ) {
-                    $objects_array[] = new $class();
-                }
-            }
-        }
-
-        return $objects_array;
-    }
-
-    /**
-     * Initialize classes.
-     *
-     * @param array $classes
-     * @return array
-     * @since 1.0.0
-     */
-    private static function boot_with_configs( array $classes = array() ) : array
-    {
-        $objects_array = array();
-
-        if ( ! empty( $classes ) ) {
-            foreach ( $classes as $class => $config ) {
-                if ( class_exists( $class ) ) {
-                    $objects_array[] = new $class( wts_config( $config ) );
-                }
-            }
-        }
-
-        return $objects_array;
-    }
 }
 
-$theme = WTSTheme::instance();
+$theme = \Codestartechnologies\WordpressThemeStarter\WTSTheme::instance();
 $theme->init();

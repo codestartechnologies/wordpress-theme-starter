@@ -1,6 +1,6 @@
 <?php
 /**
- * The template file to display single post archive in Wordpress theme
+ * The single post template. Used when a visitor requests a single post.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
