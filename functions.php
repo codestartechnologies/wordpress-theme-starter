@@ -16,7 +16,7 @@ namespace Codestartechnologies\WordpressThemeStarter;
 
 use Codestartechnologies\WordpressThemeStarter\Core\Constants as CoreConstants;
 use Codestartechnologies\WordpressThemeStarter\Core\Bootstrap;
-use Codestartechnologies\WordpressThemeStarter\Helpers\Arrays;
+use Codestartechnologies\WordpressThemeStarter\Helpers\ObjectsArray;
 use Dotenv\Dotenv;
 use WTS_Theme\App\Bindings;
 use WTS_Theme\App\Constants;
@@ -122,15 +122,15 @@ final class WTSTheme
     {
         $this->bootstrap = new Bootstrap(
             new Hooks(),
-            Arrays::create_objects_with_config( Bindings::$menus ),
-            Arrays::create_objects_with_config( Bindings::$themes_menus ),
-            Arrays::create_objects_with_config( Bindings::$setting_menus ),
-            Arrays::create_objects_with_config( Bindings::$sidebars ),
-            Arrays::create_objects( Bindings::$unregistered_widgets ),
-            Arrays::create_objects( Bindings::$widgets ),
-            Arrays::create_objects_with_config( Bindings::$customizers ),
-            Arrays::create_objects_with_config( Bindings::$settings ),
-            Arrays::create_objects( Bindings::$admin_notices )
+            ObjectsArray::create_objects_with_config( Bindings::$menus ),
+            ObjectsArray::create_objects_with_config( Bindings::$themes_menus ),
+            ObjectsArray::create_objects_with_config( Bindings::$setting_menus ),
+            ObjectsArray::create_objects_with_config( Bindings::$sidebars ),
+            ObjectsArray::create_objects( Bindings::$unregistered_widgets ),
+            ObjectsArray::create_objects( Bindings::$widgets ),
+            ObjectsArray::create_objects_with_config( Bindings::$customizers ),
+            ObjectsArray::create_objects_with_config( Bindings::$settings ),
+            ObjectsArray::create_objects( Bindings::$admin_notices )
         );
 
         $this->bootstrap->setup();

@@ -1,8 +1,8 @@
 <?php
 /**
- * Arrays class file.
+ * ObjectsArray class file.
  *
- * This file contains Arrays class used in creating objects from an array of classes.
+ * This file contains ObjectsArray class used for handling classes or objects that are inside an array.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -21,14 +21,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Arrays class
+ * ObjectsArray class
  *
- * This class contains methods for creating objects from from an array of classes.
+ * This class contains methods for handling classes or objects that are inside an array.
  *
  * @package WordpressThemeStarter
  * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
-class Arrays
+class ObjectsArray
 {
     /**
      * Returns an array of class objects.
