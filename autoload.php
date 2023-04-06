@@ -62,9 +62,9 @@ final class WTSAutoLoader
      * @since 1.0.0
      */
     protected static array $file_autoloads = array(
-        "src/Helpers/general.php",
-        "src/Helpers/pagination.php",
-        "src/Helpers/posts.php",
+        "src/functions-general.php",
+        "src/functions-pagination.php",
+        "src/functions-posts.php",
         "app/functions.php",
     );
 

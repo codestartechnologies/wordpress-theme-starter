@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains functions for creating pagination links for archive pages.
+ * This file contains functions for creating pagination links on archive pages.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>

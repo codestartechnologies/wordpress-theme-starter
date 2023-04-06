@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains functions for interacting with post types.
+ * This file contains functions for interacting with different post types.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
