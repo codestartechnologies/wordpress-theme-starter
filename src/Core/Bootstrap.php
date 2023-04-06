@@ -20,8 +20,8 @@ use Codestartechnologies\WordpressThemeStarter\Abstracts\OptionsPage;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Settings;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Sidebar;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\ThemePage;
+use Codestartechnologies\WordpressThemeStarter\Helpers\Arrays;
 use Codestartechnologies\WordpressThemeStarter\Interfaces\ActionHooks;
-use Codestartechnologies\WordpressThemeStarter\Traits\Validator;
 use WTS_Theme\App\Hooks;
 
 /**
@@ -41,9 +41,6 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 final class Bootstrap implements ActionHooks
 {
-
-    use Validator;
-
     /**
      * Theme hooks.
      *
@@ -165,15 +162,15 @@ final class Bootstrap implements ActionHooks
     )
     {
         $this->hooks = $hooks;
-        $this->menu_pages = $this->check_objects_parent_type( $menu_pages, MenuPage::class )['valid'];
-        $this->theme_pages = $this->check_objects_parent_type( $theme_pages, ThemePage::class )['valid'];
-        $this->options_pages = $this->check_objects_parent_type( $options_pages, OptionsPage::class )['valid'];
-        $this->sidebars = $this->check_objects_parent_type( $sidebars, Sidebar::class )['valid'];
-        $this->removed_widgets = $this->check_objects_parent_type( $removed_widgets, \WP_Widget::class )['valid'];
-        $this->widgets = $this->check_objects_parent_type( $widgets, \WP_Widget::class )['valid'];
-        $this->customizers = $this->check_objects_parent_type( $customizers, Customizer::class )['valid'];
-        $this->settings = $this->check_objects_parent_type( $settings, Settings::class )['valid'];
-        $this->admin_notices = $this->check_objects_parent_type( $admin_notices, AdminNotice::class )['valid'];
+        $this->menu_pages = Arrays::check_objects_parent_type( $menu_pages, MenuPage::class )['valid'];
+        $this->theme_pages = Arrays::check_objects_parent_type( $theme_pages, ThemePage::class )['valid'];
+        $this->options_pages = Arrays::check_objects_parent_type( $options_pages, OptionsPage::class )['valid'];
+        $this->sidebars = Arrays::check_objects_parent_type( $sidebars, Sidebar::class )['valid'];
+        $this->removed_widgets = Arrays::check_objects_parent_type( $removed_widgets, \WP_Widget::class )['valid'];
+        $this->widgets = Arrays::check_objects_parent_type( $widgets, \WP_Widget::class )['valid'];
+        $this->customizers = Arrays::check_objects_parent_type( $customizers, Customizer::class )['valid'];
+        $this->settings = Arrays::check_objects_parent_type( $settings, Settings::class )['valid'];
+        $this->admin_notices = Arrays::check_objects_parent_type( $admin_notices, AdminNotice::class )['valid'];
     }
 
     /**

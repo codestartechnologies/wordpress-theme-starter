@@ -36,6 +36,7 @@ class Arrays
      * Value passed to this method parameter will likely be an indexed array.
      *
      * @final
+     * @static
      * @param array $classes
      * @return array
      * @since 1.0.0
@@ -61,11 +62,12 @@ class Arrays
      * Value passed to this method parameter will likely be an associative array.
      *
      * @final
+     * @static
      * @param array $classes
      * @return array
      * @since 1.0.0
      */
-    public static function create_objects_with_config( array $classes = array() ) : array
+    final public static function create_objects_with_config( array $classes = array() ) : array
     {
         $objects_array = array();
 
@@ -78,5 +80,31 @@ class Arrays
         }
 
         return $objects_array;
+    }
+
+    /**
+     * Checks the type of each objects in an array and return valid and invalid objects.
+     *
+     * @final
+     * @static
+     * @param array $objects        Array containing objects
+     * @param string $class_type    Class type to check against
+     * @return array
+     * @since 1.0.0
+     */
+    final public static function check_objects_parent_type( array $objects, string $class_type ) : array
+    {
+        $result['valid']    = array();
+        $result['invalid']  = array();
+
+        foreach ($objects as $object) {
+            if ( get_parent_class( $object ) == $class_type ) {
+                $result['valid'][] = $object;
+            } else {
+                $result['invalid'][] = $object;
+            }
+        }
+
+        return $result;
     }
 }
