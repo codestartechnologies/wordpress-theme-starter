@@ -111,6 +111,62 @@ if ( ! function_exists( 'wts_log' ) ) {
     }
 }
 
+if ( ! function_exists( 'view_not_found_message' ) ) {
+    /**
+     * Prints error message for non existing views.
+     *
+     * @param string $type  The invalid path specified.
+     * @return void
+     * @since 1.0.0
+     */
+    function view_not_found_message( $file_path ) : void
+    {
+        $markup = array_filter( ( array ) wts_config( 'views.error_messages' ) );
+        $markup = wp_parse_args( ( array ) $markup, array(
+            'not_found'  => __(
+                '<h3 style="color: red;">View could not be loaded!</h3><p>There was an error loading <b>%s</b>. Please check file exist and is readable. </p>',
+                'wps'
+            ),
+        ) );
+
+        printf( $markup['not_found'], $file_path );
+    }
+}
+
+if ( ! function_exists( 'wts_load_view' ) ) {
+    /**
+     * loads a file from views/
+     *
+     * @param string $view          The relative path to the view file. Paths are separated using dots (`.`)
+     * @param array $params         Parameters passed to the view. Default is an empty array
+     * @param string $type          The directory to search for the view. Can be either `admin` or `public`. Default is `admin`
+     * @param bool $once            Whether to include the view only once. Default true
+     * @return void
+     * @since 1.0.0
+     */
+    function wts_load_view( string $view, array $params = array(), string $type = 'admin', bool $once = true ) : void
+    {
+        $view = str_replace( '.', '/', $view );
+        $base_path = ( 'admin' === $type ) ? WTS_ADMIN_VIEWS_DIR : WTS_PUBLIC_VIEWS_DIR;
+        $full_path = $base_path . $view . '.php';
+
+        if ( is_readable( $full_path ) ) {
+
+            if ( ! empty( $params ) ) {
+                extract( $params );
+            }
+
+            if ( $once ) {
+                require_once $full_path;
+            } else {
+                require $full_path;
+            }
+        } else {
+            view_not_found_message( $full_path );
+        }
+    }
+}
+
 if ( ! function_exists( 'wts_wp_list_comments_cb' ) ) {
     /**
      * Filters the arguments used in retrieving the comment list.

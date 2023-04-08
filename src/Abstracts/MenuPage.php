@@ -14,7 +14,7 @@
 namespace Codestartechnologies\WordpressThemeStarter\Abstracts;
 
 use Codestartechnologies\WordpressThemeStarter\Interfaces\ActionHooks;
-use Codestartechnologies\WordpressThemeStarter\Traits\ViewLoader;
+use Codestartechnologies\WordpressThemeStarter\Traits\View;
 
 /**
  * Prevent direct access to this file.
@@ -34,7 +34,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 abstract class MenuPage implements ActionHooks
 {
 
-    use ViewLoader;
+    use View;
 
     /**
      * The text to be displayed in the title tags of the page when the menu is selected.

@@ -14,7 +14,7 @@
 namespace WTS_Theme\App\Admin\Settings;
 
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Settings as AbstractsSettings;
-use Codestartechnologies\WordpressThemeStarter\Traits\ViewLoader;
+use Codestartechnologies\WordpressThemeStarter\Traits\View;
 
 /**
  * Prevent direct access to this file.
@@ -36,7 +36,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 final class WTSSettings extends AbstractsSettings
 {
 
-    use ViewLoader;
+    use View;
 
     /**
      * WTSSettings Constructor

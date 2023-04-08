@@ -13,7 +13,7 @@
 
 namespace WTS_Theme\App\Public\Widgets;
 
-use Codestartechnologies\WordpressThemeStarter\Traits\ViewLoader;
+use Codestartechnologies\WordpressThemeStarter\Traits\View;
 use WP_Widget;
 
 /**
@@ -24,7 +24,8 @@ use WP_Widget;
  */
 final class WTSWidget extends WP_Widget
 {
-    use ViewLoader;
+
+    use View;
 
     /**
      * Widget ID
