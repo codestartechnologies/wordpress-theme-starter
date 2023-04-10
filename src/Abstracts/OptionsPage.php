@@ -2,7 +2,7 @@
 /**
  * OptionsPage abstract class file.
  *
- * This file contains OptionsPage abstract class which contains contracts for classes that will create admin menu pages with add_options_page().
+ * This file contains OptionsPage abstract class which contains contracts for creating admin pages under `Settings` in the admin dashboard.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -21,15 +21,27 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class OptionsPage
+ * OptionsPage class
  *
- * This class contains contracts that will be used to create admin menu pages with add-options_page().
+ * This class contains contracts for creating admin pages under `Settings` in the admin dashboard.
  *
- * @package     WordpressThemeStarter
- * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @package WordpressThemeStarter
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
 abstract class OptionsPage extends MenuPage
 {
+    /**
+     * The menu page hook name
+     *
+     * @access protected
+     * @return string
+     * @since 1.0.0
+     */
+    protected function get_menu_hookname() : string
+    {
+        return $this->page_hook ?? 'settings_page_' . $this->menu_slug;
+    }
+
     /**
      * "admin_menu" action hook callback
      *

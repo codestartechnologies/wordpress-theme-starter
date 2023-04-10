@@ -2,7 +2,7 @@
 /**
  * MenuPage abstract class file.
  *
- * This file contains MenuPage abstract class which contains contracts for classes that will create admin menu pages with add_menu_page().
+ * This file contains MenuPage abstract class which contains contracts for creating admin pages in the admin dashboard.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -24,12 +24,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class MenuPage
+ * MenuPage class
  *
- * This class contains contracts that will be used to create menu pages using add_menu_page().
+ * This class contains contracts for creating admin pages in the admin dashboard.
  *
- * @package     WordpressThemeStarter
- * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @package WordpressThemeStarter
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
 abstract class MenuPage implements ActionHooks
 {
@@ -137,8 +137,9 @@ abstract class MenuPage implements ActionHooks
      */
     final public function register_actions() : void
     {
+        $hook_suffix = $this->get_menu_hookname();
         add_action( 'admin_menu', array( $this, 'menu_page' ) );
-        add_action( "load-{$this->page_hook}", array( $this, 'load_page_hook' ) );
+        add_action( "load-{$hook_suffix}", array( $this, 'load_page_hook' ) );
     }
 
     /**
@@ -181,7 +182,19 @@ abstract class MenuPage implements ActionHooks
     }
 
     /**
-     *  Get arguments that will be passed to the page.
+     * The menu page hook name
+     *
+     * @access protected
+     * @return string
+     * @since 1.0.0
+     */
+    protected function get_menu_hookname() : string
+    {
+        return $this->page_hook ?? 'toplevel_page_' . $this->menu_slug;
+    }
+
+    /**
+     * Arguments that will be passed to the page view.
      *
      * @abstract
      * @access public

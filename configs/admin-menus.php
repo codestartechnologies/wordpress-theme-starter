@@ -1,6 +1,6 @@
 <?php
 /**
- * This file contains configuration settings for registering admin menu pages.
+ * This file contains configuration settings for classes that will register admin pages.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -11,9 +11,7 @@
 
 return array(
 
-    /**
-     * Initial values to create "WTS Menu" menu page in the admin area.
-     */
+    // Config values for WTSMenuPage::class
     'wts_menu_page'     => array(
 
         'page_title'    => esc_html__( 'WordPress Theme Starter - Menu Page', 'wts' ),
@@ -24,14 +22,12 @@ return array(
 
         'menu_slug'     => 'wts-menu-page',
 
-        'view'          => 'menus.menu-page',
+        'view'          => 'menus.wts-menu-page',
 
         'position'      => null,
     ),
 
-    /**
-     * Initial values to create "WTS Options Page" menu page in the admin dashboard.
-     */
+    // Config values for WTSOptionsPage::class
     'wts_options_page'  => array(
 
         'page_title'    => esc_html__( 'WordPress Theme Starter - Options Page', 'wts' ),
@@ -42,14 +38,12 @@ return array(
 
         'menu_slug'     => 'wts-options-page',
 
-        'view'          => 'menus.options-page',
+        'view'          => 'menus.wts-options-page',
 
         'position'      => null,
     ),
 
-    /**
-     * Initial values to create "WTS Theme Page" menu page in the admin dashboard.
-     */
+    // Config values for WTSThemePage::class
     'wts_theme_page'  => array(
 
         'page_title'    => esc_html__( 'WordPress Theme Starter - Theme Page', 'wts' ),
@@ -60,9 +54,13 @@ return array(
 
         'menu_slug'     => 'wts-theme-page',
 
-        'view'          => 'menus.theme-page',
+        'view'          => 'menus.wts-theme-page',
 
         'position'      => null,
     )
+
+    /**
+     * You can add your custom config settings below.
+     */
 
 );

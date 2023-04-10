@@ -2,7 +2,7 @@
 /**
  * WTSMenuPage class file.
  *
- * This is an example class file for creating admin menu pages with add_menu_page().
+ * This file contains WTSMenuPage class. This class will create an admin page in the admin dashboard.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -25,10 +25,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class WTSMenuPage
  *
- * This class registers admin menus using add_menu_page(). This class must implement view_args() and load_page_hook() methods.
+ * This class will create an admin page in the admin dashboard.
  *
- * @package     WordpressThemeStarter
- * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @package WordpressThemeStarter
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
 final class WTSMenuPage extends AbstractsMenuPage
 {
@@ -46,7 +46,7 @@ final class WTSMenuPage extends AbstractsMenuPage
     }
 
     /**
-     * Get arguments that will be passed to the page.
+     * Arguments that will be passed to the page view.
      *
      * @access public
      * @return array

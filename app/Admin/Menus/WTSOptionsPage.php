@@ -2,7 +2,7 @@
 /**
  * WTSOptionsPage class file.
  *
- * his is an example class file for creating admin menu pages with add_options_page().
+ * This file contains WTSOptionsPage class. This class will create an admin page under `Settings`.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -23,12 +23,12 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class WTSOptionsPage
+ * WTSOptionsPage class
  *
- * This class registers admin menus using add_options_page(). This class must implement view_args() and load_page_hook() methods.
+ * This class will create an admin page under `Settings`.
  *
- * @package     WordpressThemeStarter
- * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @package WordpressThemeStarter
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
 final class WTSOptionsPage extends AbstractsOptionsPage
 {
@@ -46,7 +46,7 @@ final class WTSOptionsPage extends AbstractsOptionsPage
     }
 
     /**
-     * Get arguments that will be passed to the page.
+     * Arguments that will be passed to the page view.
      *
      * @access public
      * @return array

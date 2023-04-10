@@ -1,6 +1,6 @@
 <?php
 /**
- * This file is used to display the contents of a menu page.
+ * View returned by WTSOptionsPage::class.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
