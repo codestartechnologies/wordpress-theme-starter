@@ -11,9 +11,7 @@
 
 return array(
 
-    /**
-     * Initial values to create "WordPress Theme Starter" customizer section.
-     */
+    // Config values for WTSCustomizer::class.
 
     'wts_customizer'  => array(
 
@@ -46,7 +44,7 @@ return array(
 
                     'default'           => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus alias fuga quia laborum provident a odit cum neque sequi quibusdam praesentium ad reprehenderit rem amet laudantium iste, ut obcaecati impedit.',
 
-                    'transport'         => 'refresh', //postMessage
+                    'transport'         => 'refresh', // or postMessage
 
                     'validate_callback' => 'wts_footer_text_validate_callback',
 
@@ -62,7 +60,7 @@ return array(
 
                     'default'           => esc_html__( 'This is an error page.', 'wts' ),
 
-                    'transport'         => 'refresh', //postMessage
+                    'transport'         => 'refresh', // or postMessage
 
                     'validate_callback' => 'wts_footer_text_validate_callback',
 
@@ -109,183 +107,141 @@ return array(
                 ),
             ),
 
-            /**
-             * Other control configuration setttings are listed below
-             *
-             */
-
-            /**
-             * Media control
-            */
-            array(
-
-                'id'    => '',
-
-                'args'  => array(
-
-                    'settings'          => '',
-
-                    'section'           => '',
-
-                    'label'             => '',
-
-                    'description'       => '',
-
-                    'active_callback'   => '',
-
-                    'mime_type'         => 'image',
-                ),
-
-                'control_customizer'    => 'media_control',
-            ),
-
-            /**
-             * Checkbox control
-             */
-            array(
-
-                'id'    => '',
-
-                'args'  => array(
-
-                    'settings'          => '',
-
-                    'section'           => '',
-
-                    'label'             => '',
-
-                    'type'              => 'checkbox',
-
-                    'active_callback'   => '',
-                ),
-            ),
-
-            /**
-             * Number control
-             */
-            array(
-
-                'id'    => '',
-
-                'args'  => array(
-
-                    'settings'          => '',
-
-                    'section'           => '',
-
-                    'label'             => '',
-
-                    'description'       => '',
-
-                    'type'              => 'number',
-
-                    'active_callback'   => '',
-                ),
-            ),
-
-            /**
-             * Text control
-             */
-            array(
-
-                'id'    => '',
-
-                'args'  => array(
-
-                    'settings'          => '',
-
-                    'section'           => '',
-
-                    'label'             => '',
-
-                    'input_attrs'       => array(
-
-                        'placeholder'   => '',
-                    ),
-
-                    'type'              => 'text',
-
-                    'active_callback'   => '',
-                ),
-            ),
-
-            /**
-             * Textarea control
-             */
-            array(
-
-                'id'    => '',
-
-                'args'  => array(
-
-                    'settings'          => '',
-
-                    'section'           => '',
-
-                    'label'             => '',
-
-                    'type'              => 'textarea',
-
-                    'active_callback'   => '',
-                ),
-            ),
-
-            /**
-             * URL control
-             */
-            array(
-
-                'id'    => '',
-
-                'args'  => array(
-
-                    'settings'          => '',
-
-                    'section'           => '',
-
-                    'label'             => '',
-
-                    'type'              => 'url',
-
-                    'input_attrs'       => array(
-
-                        'placeholder'   => 'https://',
-                    ),
-
-                    'active_callback'   => '',
-                ),
-            ),
-
-            /**
-             * Email control
-             */
-            array(
-
-                'id'    => '',
-
-                'args'  => array(
-
-                    'settings'          => '',
-
-                    'section'           => '',
-
-                    'label'             => '',
-
-                    'input_attrs'       => array(
-
-                        'placeholder'   => '',
-                    ),
-
-                    'type'              => 'email',
-
-                    'active_callback'   => '',
-                ),
-            ),
         ),
     ),
 
     /**
-     * Add your custom customizer configuration settings below
+     * To enable you create configurations for your customizer class more quickly, we've added a list of supported customizer control types
+     * in Wordpress.
+     *
+     */
+
+    /*
+
+    1. Media control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'description'       => esc_html__( '', 'wts' ),
+            'active_callback'   => '',
+            'mime_type'         => '', // e.g image
+        ),
+        'control_customizer'    => 'media_control',
+    ),
+
+    2. Checkbox control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'type'              => 'checkbox',
+            'active_callback'   => '',
+        ),
+    ),
+
+    3. Number control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'description'       => esc_html__( '', 'wts' ),
+            'type'              => 'number',
+            'active_callback'   => '',
+        ),
+    ),
+
+    4. Text control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'input_attrs'       => array(
+                'placeholder'   => esc_html__( '', 'wts' ),
+            ),
+            'type'              => 'text',
+            'active_callback'   => '',
+        ),
+    ),
+
+    5. Textarea control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'type'              => 'textarea',
+            'active_callback'   => '',
+        ),
+    ),
+
+    6. URL control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'type'              => 'url',
+            'input_attrs'       => array(
+                'placeholder'   => esc_html__( 'https:// or http://', 'wts' ),
+            ),
+            'active_callback'   => '',
+        ),
+    ),
+
+    7. Email control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'input_attrs'       => array(
+                'placeholder'   => esc_html__( '', 'wts' ),
+            ),
+            'type'              => 'email',
+            'active_callback'   => '',
+        ),
+    ),
+
+    8. Select control
+
+    array(
+        'id'    => '',
+        'args'  => array(
+            'settings'          => '',
+            'section'           => '',
+            'label'             => esc_html__( '', 'wts' ),
+            'description'       => esc_html__( '', 'wts' ),
+            'choices'           => array(
+                'choice_one' => esc_html__( 'Choice One', 'wts' ),
+                'choice_two' => esc_html__( 'Choice Two', 'wts' ),
+            ),
+            'type'              => 'select',
+        ),
+    ),
+
+    */
+
+    /**
+     * You can add your custom customizer configuration settings below
      */
 
 );

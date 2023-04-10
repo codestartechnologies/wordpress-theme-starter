@@ -2,8 +2,7 @@
 /**
  * Customizer abstract class file.
  *
- * This file contains Customizer abstract class which contains contracts for classes that will
- * register customizer sections, settings and controls.
+ * This file contains Customizer abstract class which contains contracts for creating customizer sections, settings and controls.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -27,8 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Customizer
  *
- * This class contains contracts that will be used to register customizer sections, settings,
- * and controls.
+ * This class contains contracts that will be used to create customizer sections, settings, and controls.
  *
  * @package     WordpressThemeStarter
  * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -85,7 +83,7 @@ abstract class Customizer implements ActionHooks
      * @return void
      * @since 1.0.0
      */
-    final public function register_actions(): void
+    final public function register_actions() : void
     {
         add_action( 'customize_register', array( $this, 'register_customizer' ) );
     }
@@ -137,7 +135,7 @@ abstract class Customizer implements ActionHooks
     private function add_settings( \WP_Customize_Manager $manager ) : void
     {
         if ( ! empty( $this->settings ) ) {
-            foreach ($this->settings as $setting) {
+            foreach ( $this->settings as $setting ) {
                 $setting_args = $this->get_args_with_cb( $setting, 'validate_callback' );
                 $args = wp_parse_args( $setting_args, $this->get_default_setting_arg() );
                 if ( empty( $args['validate_callback'] ) ) unset( $args['validate_callback'] );
@@ -159,7 +157,7 @@ abstract class Customizer implements ActionHooks
     private function add_controls( \WP_Customize_Manager $manager ) : void
     {
         if ( ! empty( $this->controls ) ) {
-            foreach ($this->controls as $control) {
+            foreach ( $this->controls as $control ) {
                 $control_args = $this->get_args_with_cb( $control, 'active_callback' );
                 $customizer_control = isset( $control['control_customizer'] ) ?: '';
 
@@ -171,7 +169,6 @@ abstract class Customizer implements ActionHooks
                     default:
                         $args = wp_parse_args( $control_args, $this->get_default_control_arg() );
                         $manager->add_control( $control['id'], $args );
-                        break;
                 }
             }
         }
@@ -189,9 +186,9 @@ abstract class Customizer implements ActionHooks
     private function get_args_with_cb( array $setting, string $callback ) : array
     {
         if ( isset( $setting['args'][ $callback ] ) && ! empty( $setting['args'][ $callback ] ) ) {
-            $setting['args'][$callback] = (is_callable($setting['args'][$callback]))
-                ? $setting['args'][$callback]
-                : array($this, $setting['args'][$callback]);
+            $setting['args'][ $callback ] = ( is_callable( $setting['args'][ $callback ] ) )
+                ? $setting['args'][ $callback ]
+                : array( $this, $setting['args'][ $callback ] );
         }
 
         return $setting['args'];

@@ -2,7 +2,8 @@
 /**
  * WTSCustomizer class file
  *
- * This is an example class file for creating customizer sections, settings and controls.
+ * This file contains WTSCustomizer class. This class will be used to create a customizer section - "WordPress Theme Starter".
+ * It will also create settings and controls for this section.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -25,11 +26,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * WTSCustomizer Class
  *
- * Registers customizer sections, settings and controls. This class needs to define methods that will be passed as callbacks to
- * WP_Customize_Manager::add_section(), WP_Customize_Manager::add_setting(), and WP_Customize_Manager::add_control().
+ * This class will create a customizer section - "WordPress Theme Starter". It will also create settings and controls for this section.
  *
- * @package     WordpressThemeStarter
- * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @package WordpressThemeStarter
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
 final class WTSCustomizer extends AbstractsCustomizer
 {
