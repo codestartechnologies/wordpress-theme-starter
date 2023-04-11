@@ -2,114 +2,121 @@
 
 ## Description
 
-A boiler-plate for a wordpress theme. WordPress Theme Starter will help you create a WordPress Theme quickly. It reduces the need for creating hooks using add_action() and add_filter() functions. It lets you focus on the functionalities that your theme will need.
+A boiler-plate for a wordpress theme. WordPress Theme Starter will help you create WordPress themes quickly and stress free. It reduces the time you'll normally spend creating a fully functioning theme. This boiler-plate is developed using Object Oriented Concepts (OOP), along with WordPress concepts and will help you build your theme in an object oriented manner.
 
-## Features
+WordPress Theme Starter is a project that was inspired from [oop-wordpress-starter-theme](<https://github.com/msn60/oop-wordpress-starter-theme>) by [Mehdi Soltani](<soltani.n.mehdi@gmail.com>)
 
-- Customizers
-- Admin Menus
+## Built In Features
+
+- Customizer Settings
+- Admin Pages
 - Admin Notices
-- Settings
+- Setting Sections And Fields
 - Sidebar Areas
 - Widgets
 
-## Installation
+## Using The Boiler Plate
 
 - Clone the project from the repository.
-- Rename the folder (wordpress-theme-starter) to the name of your theme.
-- Open the project with any editor of your choice.
-- Change the default theme information in style.css to match your theme information.
-- Replace screenshot.png with your theme's screenshot png file.
+- Rename the root folder (**wordpress-theme-starter**) to the name you want for your theme.
+- Open the project with any editor of your choice and modify the default header comment section in **style.css** to match your theme information.
+- Replace **screenshot.png** image file with your theme's screenshot png/jpeg file.
 
 ## Project Directories
 
-### app/ directory
+### app
 
-The **app** directory contains your custom classes. Classes defined in this directory will be used to add functionalities for creating customizer sections, settings, and controls, creating admin menu pages, creating admin notices, registering settings and setting sections, registering sidebar areas and widgets. It also contains classes that will be used to add custom action and filter hooks, define constants, and register bindings.
+The app directory contains custom classes you will use to add functionalities to your theme. Examples are classes you will use to create customizer settings, admin pages, admin notices, custom setting sections and fields, sidebar areas, and widgets. It contains two (2) sub directories - **Admin** and **Public**.
 
-### assets/ directory
+### assets
 
-The **assets** directory contains assets needed by your theme, like css files, javascript files, image files, etc.
+The assets directory contains your theme asset files like css files, javascript files, image files, etc. It contains three (3) sub directories - **css**, **images**, and **js**.
 
-### configs/ directory
+### configs
 
-The **configs** directory contains configuration files that you can use to alter default options that comes with the boiler-plate.
+The configs directory contains configuration files that you can either use to modify default settings, or use in setting up features required by your theme.
 
-### languages/ directory
+### languages
 
-The **languages** directory will contain your theme's language translation files. Examples are your *POT files*, *PO files*, and *MO files*.
+The languages directory will contain your theme's language translation files. Examples are your *POT files*, *PO files*, and *MO files*.
 
-### src/ directory
+### src
 
-The **src** directory contains the core project files. You don't have to edit any file in this directory.
+The src directory contains core project files.
 
-### template-parts/ directory
+### template-parts
 
-The **template-parts** directory contains files that your theme template files will include.
+The template-parts directory contains files that your theme template files will include.
 
-### vendor/ directory
+### vendor
 
-The **vendor** directory contains folders created by packages that your theme will require. You don't have to edit any file in this directory.
+The vendor directory contains core packages required by the boiler-plate.
 
-### views/ directory
+### views
 
-The **views** directory contains files that will be included at specific places within your theme. Examples are views that will be used to display content for an admin menu page, a setting field, or a widget.
+The views directory contains files that will be included at specific places within your theme. Examples are views that will be used to display an admin page or a widget content.
 
-## Getting Started
+## Files In app Folder
 
-### Create An Admin Notice
+### Hooks.php
 
-To create an admin notice, navigate to **app > Admin > Notices** directory and create a new php file with the same name as the class which will be used to create the notification. For example you can create a **HelloWorldNotice.php** file, which will contain **HelloWorldNotice** class. The **HelloWorldNotice** will need to extend `Codestartechnologies\WordpressThemeStarter\Abstracts\AdminNotice` abstract class, which is the main class responsible for registering the hooks needed to create an admin notice. After extending the **AdminNotice** abstract class, you will need to implement `notification()` method. The `notification()` method contains the output of your notice.
+**Hooks.php** file contains `Hook` class which you will use to add custom hooks to your theme. `register_actions()` method contains your action hooks, and `register_filters()` method contains your filter hooks.
 
-After creating the admin notice class, navigate to **app** directory, open **Bindings.php**, this file is where you bind classes that will add functionalities to your theme. Locate `public static array $admin_notices` inside the `Bindings` class, and add the **HelloWorldNotice** class to the `$admin_notices` array.
+### functions.php
 
-To get started quickly, see **WTSAdminNotice.php** located in the same directory. and change the output `notification()` method.
+You can create custom functions that you will need inside **functions.php** file.
 
-### Create Customizer Sections, Settings, And Controls
+### Constants.php
 
-See **WTSCustomizer.php** in **app > Admin > Customizers** directory.
+You can define constants for your theme inside the `define_constants()` method in **Constants.php** file.
 
-### Create Admin Menus
+### Bindings.php
 
-See **WTSMenuPage.php**, **WTSOptionsPage.php**, and **WTSThemePage.php** in **app > Admin > Menus** directory.
-
-### Create Settings, Settings Section And Fields
-
-See **WTSSettings.php** in **app > Admin > Settings** directory.
-
-### Create A Sidebar
-
-See **WTSSidebar.php** in **app > Public > Sidebars** directory.
-
-### Create A Widget
-
-See **WTSWidget.php** in **app > Public > Widgets** directory.
-
-### Create Custom Action And Filter Hooks
-
-**app > Hooks.php** file contains `Hook` class where you add custom hooks to your theme. `register_actions()` method contains your action hooks, and `register_filters()` method contains your filter hooks.
-
-### Create Custom Helper Functions
-
-You can create custom functions that you will need inside **app > functions.php** file.
-
-### Define Custom Constants
-
-You can define constants for your theme inside the `define_constants()` method in **app > Constants.php** file.
-
-### Bind Classes To Theme Core
-
-**app > Bindings.php** contains `Bindings` class, where you register classes that will add functionalities to your theme. The class contains default classes that have been registered with our theme. You can choose to comment them out.
+**Bindings.php** contains `Bindings` class, where you register classes that will add functionalities to your theme.
 
 Some classes will need to specify the path to their config settings. Example `WTSMenuPage` class, added to `$menus` array, specifies a config setting `admin-menus.wts_menu_page`. This config settings is gotten from an array key **wts_menu_page**, defined in **admin-menus.php** file located in the **configs** directory.
 
-## Fix For Class Namespace Conflicts
+### Admin folder
 
-To prevent *namespace* conflicts, ensure that classes you create in the **app** directory have unique *namespace*. Example: You can choose to prefix namespaces in **app/** with **Theme_Name**. Then you change all occurence of `WTS_Theme\App;` namespace to `Theme_Name\WTS_Theme\App`. Next, you open **autoloader.php** and change `$namespace = 'WTS_Theme\App';` to `$namespace = 'Theme_Name\WTS_Theme\App';` inside `wts_autoloader()` function.
+The **Admin** directory stores classes with features that are meant to run in the admin area of the site.
 
-Classes in **src** directory should also have unique *namespace* that will not conflict with other *namespaces* that may be registered by another theme. This will will help prevent *namespace* conflicts that can occur between two or more WordPress themes built with different versions of **WordPress Theme Starter**. Example: `Codestartechnologies\WordpressThemeStarter\Abstracts;` namespace can be modified to `Theme_Name\Codestartechnologies\WordpressThemeStarter\Abstracts;`.
+Sub directories found inside the Admin folder includes:
 
-We are currently working on a feature that will enable developers automatically generate custom *namespace* prefix for classes in the **src/** and **app/** directory from their C.L.I, rather than editing files manualy.
+- Customizer - used for storing classes that will create customizer settings.
+- Menus - used for storing classes that will create admin pages.
+- Notices - used for storing classes that will create admin notifications.
+- Settings - used for storing classes that will create setting sections and fields.
+
+### Public folder
+
+The **Public** directory stores classes with features that are meant to run either in the admin or front-end area of the site.
+
+Sub directories found inside the Admin folder includes:
+
+- Sidebars - used for storing classes that will register sidebar areas.
+- Widgets - used for storing classes that will register widgets.
+
+## Documentation
+
+Documentation is still being compiled.
+
+## Issue With Namespace Conflicts
+
+Due to the nature of WordPress, it is very likely that there will be namespace conflicts between two WordPress themes that are developed using this boiler-plate if they are installed on one website. There can be problems if two or more WordPress themes on your site are using different versions of **WordPress Theme Starter**.
+
+To prevent namespace conflicts, ensure that namespaces for all the project classes are prefixed to allow them have unique namespace. That means classes in **src** and **app** directory should have unique namespace that will not conflict with namespaces from other WordPress projects developed using this boiler-plate.
+
+## Manual Fix For Class Namespace Conflicts
+
+Example: You can choose to prefix all namespaces with **Theme_Name**. That means any existing classes or newly created class in **app** directory that have a namespace of `WTS_Theme\App;` will have their namespace prefixed to `Theme_Name\WTS_Theme\App`. Also, all classes in the **src** directory will have their namespaces modified from `Codestartechnologies\WordpressThemeStarter\Abstracts;` to `Theme_Name\Codestartechnologies\WordpressThemeStarter\Abstracts;`.
+
+Next, open **autoload.php** where you'll find `WTSAutoLoader` class. Set the value for `WTSAutoLoader::$prefix` to `Theme_Name`.
+
+Remember to update other places within the project where classes are called using their namespace. That means every instance of `use WTS_Theme\App\...` and `use Codestartechnologies\WordpressThemeStarter\..` will be modified to `use Theme_Name\WTS_Theme\App\...` and `use Theme_Name\Codestartechnologies\WordpressThemeStarter\..`. Same with all instances of `\Codestartechnologies\WordpressThemeStarter\...` and `\WTS_Theme\App\...` should be modified to `\Theme_Name\Codestartechnologies\WordpressThemeStarter\..` and `\Theme_Name\WTS_Theme\App\...`.
+
+## Fix For Class Namespace Conflicts Via C.L.I
+
+We are currently working on a feature that will enable developers automatically generate custom namespace prefix via the command line interface for all classes used in the project except classes in **vendor/** directory. This feature will take away the need for editing files manualy.
 
 ## License
 
