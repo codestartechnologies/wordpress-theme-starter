@@ -2,7 +2,7 @@
 /**
  * This file is where unique features are added to your WordPress theme.
  *
- * This file behaves like a WordPress plugin, adding features and functionality to a WordPress site. It contains WTSTheme class which is used
+ * This file behaves like a WordPress plugin, adding features and functionality to a WordPress site. It contains Theme class which is used
  * to set up your theme.
  *
  * @package    WordpressThemeStarter
@@ -15,7 +15,7 @@
 namespace Codestartechnologies\WordpressThemeStarter;
 
 use Codestartechnologies\WordpressThemeStarter\Core\Constants as CoreConstants;
-use Codestartechnologies\WordpressThemeStarter\Core\Bootstrap;
+use Codestartechnologies\WordpressThemeStarter\Core\ThemeCore;
 use Codestartechnologies\WordpressThemeStarter\Helpers\Hooks as HelpersHooks;
 use Codestartechnologies\WordpressThemeStarter\Helpers\ObjectsArray;
 use Dotenv\Dotenv;
@@ -31,26 +31,26 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * WTSTheme class
+ * Theme class
  *
  * Main class used in setting up your theme. This class is designed from a singleton design pattern.
  *
  * @package WordpressThemeStarter
  * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
-final class WTSTheme
+final class Theme
 {
     /**
-     * Instance property of WTSTheme class
+     * Instance property of Theme class
      *
-     * This property will be used to create one object from WTSTheme class in the whole of program execution.
+     * This property will be used to create one object from Theme class in the whole of program execution.
      *
      * @access private
      * @static
-     * @var WTSTheme
+     * @var Theme
      * @since 1.0.0
      */
-    private static WTSTheme $instance;
+    private static Theme $instance;
 
     /**
      * Object containing core functionalities of the theme.
@@ -58,13 +58,13 @@ final class WTSTheme
      * It is the main class that will manage and handle all the tasks required by your theme.
      *
      * @access private
-     * @var Bootstrap
+     * @var ThemeCore
      * @since 1.0.0
      */
-    private Bootstrap $bootstrap;
+    private ThemeCore $bootstrap;
 
     /**
-     * WTSTheme constructor
+     * Theme constructor
      *
      * It include autoloader class files, and defines related constants for the theme.
      *
@@ -92,15 +92,15 @@ final class WTSTheme
     }
 
     /**
-     * WTSTheme Instance
+     * Theme Instance
      *
-     * Creates an instance from WTSTheme class
+     * Creates an instance from Theme class
      *
      * @static
-     * @return WTSTheme
+     * @return Theme
      * @since 1.0.0
      */
-    public static function instance() : WTSTheme
+    public static function instance() : Theme
     {
         // Check for an existing instance and return the instance
         if ( ! isset( self::$instance ) ) {
@@ -121,7 +121,7 @@ final class WTSTheme
      */
     public function init() : void
     {
-        $this->bootstrap = new Bootstrap(
+        $this->bootstrap = new ThemeCore(
             new Hooks(),
             new HelpersHooks(),
             ObjectsArray::create_objects_with_config( Bindings::$menus ),
@@ -139,5 +139,5 @@ final class WTSTheme
     }
 }
 
-$theme = \Codestartechnologies\WordpressThemeStarter\WTSTheme::instance();
+$theme = \Codestartechnologies\WordpressThemeStarter\Theme::instance();
 $theme->init();

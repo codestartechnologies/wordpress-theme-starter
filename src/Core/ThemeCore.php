@@ -1,8 +1,8 @@
 <?php
 /**
- * Bootstrap class file.
+ * ThemeCore class file.
  *
- * This file contains Bootstrap class which bootstraps all the functionalties needed by your theme.
+ * This file contains ThemeCore class which manages all important tasks in your theme.
  *
  * @package    WordpressThemeStarter
  * @author     Chijindu Nzeako <chijindunzeako517@gmail.com>
@@ -33,14 +33,14 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Class Bootstrap
+ * ThemeCore class
  *
- * This class handles and manages all functionalities needed by this theme.
+ * This class handles and manages all functionalities for your theme.
  *
- * @package     WordpressThemeStarter
- * @author      Chijindu Nzeako <chijindunzeako517@gmail.com>
+ * @package WordpressThemeStarter
+ * @author  Chijindu Nzeako <chijindunzeako517@gmail.com>
  */
-final class Bootstrap implements ActionHooks
+final class ThemeCore implements ActionHooks
 {
     /**
      * Theme hooks.
