@@ -20,6 +20,7 @@ use Codestartechnologies\WordpressThemeStarter\Abstracts\OptionsPage;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Settings;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\Sidebar;
 use Codestartechnologies\WordpressThemeStarter\Abstracts\ThemePage;
+use Codestartechnologies\WordpressThemeStarter\Helpers\Hooks as HelpersHooks;
 use Codestartechnologies\WordpressThemeStarter\Helpers\ObjectsArray;
 use Codestartechnologies\WordpressThemeStarter\Interfaces\ActionHooks;
 use WTS_Theme\App\Hooks;
@@ -49,6 +50,15 @@ final class Bootstrap implements ActionHooks
      * @since 1.0.0
      */
     protected Hooks $hooks;
+
+    /**
+     * Theme default hooks.
+     *
+     * @access protected
+     * @var HelpersHooks
+     * @since 1.0.0
+     */
+    protected HelpersHooks $default_hooks;
 
     /**
      * Admin menu pages
@@ -136,6 +146,7 @@ final class Bootstrap implements ActionHooks
      *
      * @access public
      * @param Hooks $hooks
+     * @param HelpersHooks $default_hooks
      * @param array $menu_pages
      * @param array $theme_pages
      * @param array $options_pages
@@ -150,6 +161,7 @@ final class Bootstrap implements ActionHooks
      */
     public function __construct(
         Hooks $hooks,
+        HelpersHooks $default_hooks,
         array $menu_pages = array(),
         array $theme_pages = array(),
         array $options_pages = array(),
@@ -162,6 +174,7 @@ final class Bootstrap implements ActionHooks
     )
     {
         $this->hooks = $hooks;
+        $this->default_hooks = $default_hooks;
         $this->menu_pages = ObjectsArray::check_objects_parent_type( $menu_pages, MenuPage::class )['valid'];
         $this->theme_pages = ObjectsArray::check_objects_parent_type( $theme_pages, ThemePage::class )['valid'];
         $this->options_pages = ObjectsArray::check_objects_parent_type( $options_pages, OptionsPage::class )['valid'];
@@ -183,6 +196,10 @@ final class Bootstrap implements ActionHooks
     public function setup() : void
     {
         // Register WordPress Theme Starter Hooks
+        $this->default_hooks->register_actions();
+        $this->default_hooks->register_filters();
+
+        // Register Custom Hooks
         $this->hooks->register_actions();
         $this->hooks->register_filters();
 

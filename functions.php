@@ -16,6 +16,7 @@ namespace Codestartechnologies\WordpressThemeStarter;
 
 use Codestartechnologies\WordpressThemeStarter\Core\Constants as CoreConstants;
 use Codestartechnologies\WordpressThemeStarter\Core\Bootstrap;
+use Codestartechnologies\WordpressThemeStarter\Helpers\Hooks as HelpersHooks;
 use Codestartechnologies\WordpressThemeStarter\Helpers\ObjectsArray;
 use Dotenv\Dotenv;
 use WTS_Theme\App\Bindings;
@@ -122,6 +123,7 @@ final class WTSTheme
     {
         $this->bootstrap = new Bootstrap(
             new Hooks(),
+            new HelpersHooks(),
             ObjectsArray::create_objects_with_config( Bindings::$menus ),
             ObjectsArray::create_objects_with_config( Bindings::$themes_menus ),
             ObjectsArray::create_objects_with_config( Bindings::$setting_menus ),
