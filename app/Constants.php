@@ -88,7 +88,7 @@ final class Constants
         }
 
         /**
-         * Define constants your custom constants below. It is recommended you check for existence of a constant before defining it.
+         * Define your custom constants below. It is recommended you check for existence of a constant before defining it.
          */
 
     }

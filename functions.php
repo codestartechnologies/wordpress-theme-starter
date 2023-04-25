@@ -61,7 +61,7 @@ final class Theme
      * @var ThemeCore
      * @since 1.0.0
      */
-    private ThemeCore $bootstrap;
+    private ThemeCore $theme_core;
 
     /**
      * Theme constructor
@@ -121,7 +121,7 @@ final class Theme
      */
     public function init() : void
     {
-        $this->bootstrap = new ThemeCore(
+        $this->theme_core = new ThemeCore(
             new Hooks(),
             new HelpersHooks(),
             ObjectsArray::create_objects_with_config( Bindings::$menus ),
@@ -135,7 +135,7 @@ final class Theme
             ObjectsArray::create_objects( Bindings::$admin_notices )
         );
 
-        $this->bootstrap->setup();
+        $this->theme_core->setup();
     }
 }
 

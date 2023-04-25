@@ -111,7 +111,7 @@ if ( ! function_exists( 'wts_log' ) ) {
     }
 }
 
-if ( ! function_exists( 'view_not_found_message' ) ) {
+if ( ! function_exists( 'wts_view_not_found_message' ) ) {
     /**
      * Prints error message for non existing views.
      *
@@ -119,7 +119,7 @@ if ( ! function_exists( 'view_not_found_message' ) ) {
      * @return void
      * @since 1.0.0
      */
-    function view_not_found_message( $file_path ) : void
+    function wts_view_not_found_message( $file_path ) : void
     {
         $markup = array_filter( ( array ) wts_config( 'views.error_messages' ) );
         $markup = wp_parse_args( ( array ) $markup, array(
@@ -162,7 +162,7 @@ if ( ! function_exists( 'wts_load_view' ) ) {
                 require $full_path;
             }
         } else {
-            view_not_found_message( $full_path );
+            wts_view_not_found_message( $full_path );
         }
     }
 }
